@@ -56,7 +56,24 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
+body {
+    margin: 0 auto;
+    width: 212px;
+}
+main {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: stretch;
+}
+img {
+    margin: 1em 0 0;
+    width: 100%;
+    height: auto;
+}
+iframe {
+    flex-grow: 1;
+}
 
 
 
