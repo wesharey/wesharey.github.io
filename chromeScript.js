@@ -1,3 +1,4 @@
+// Run me in browser console from https://www.eventbrite.com/myevents/
 (()=>{
   let events = document.querySelectorAll('.event-card-myevents-container');
   let resHTML = "<ul>"
