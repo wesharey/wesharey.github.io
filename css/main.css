@@ -78,37 +78,23 @@ img {
     width: 287px;
     height: auto;
 }
-
 a{
     text-decoration: none;
     font-weight: bold;
     color:#00A8F2;
 }
-
 a:hover{
     text-decoration: underline;
 }
-
-
-
 iframe{
-    height: 527px;
-    width: 210px;
+    height: 585px;
+    width: 219px;
     display: block;
     margin: 0 auto;
 }
-
 .motto{
     font-style: italic;
 }
-
-
-
-
-
-
-
-
 
 
 
