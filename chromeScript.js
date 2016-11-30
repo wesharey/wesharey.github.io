@@ -15,4 +15,12 @@
 
   document.write(layoutHTML);
 
+  
+  var link = "mailto:OFS_Teams <OFS_Teams@yoox.com>; F31Support <F31Support@yoox.com>; Experience <experience@yoox.com>"
+  + "?subject=" + escape("[WeShare] Appuntamenti della prossima settimana")
+  + "&body="
+  ;
+
+  window.location.href = link;
+
 })()
