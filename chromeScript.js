@@ -5,9 +5,10 @@
       let linkText = v.querySelectorAll('.hide-small')[0].innerHTML;
       let linkHref = v.querySelectorAll('.text-body--faint')[3].getAttribute('href');
       let date = v.querySelectorAll('.text-body--faint')[0].outerHTML;
-      let totalTicket = v.querySelectorAll('.text-body--faint')[4].innerHTML;
+      let totalTicket = v.querySelectorAll('.text-body--faint')[4].innerHTML.match(/\d+/);
       let soldTicket = v.querySelectorAll('.text-color--green')[0].innerHTML;
-      resHTML += `<a href="https://www.eventbrite.com${linkHref}">${linkText}</a><br>${date}<br>Biglietti venduti: ${soldTicket}${totalTicket}<br><br>`;
+      let availableTicket = totalTicket-soldTicket;
+      resHTML += `<a href="https://www.eventbrite.com${linkHref}" style="font-size:16px"><b>${linkText}</b></a><br>${date}<br>${availableTicket===0 ? 'SOLDOUT!' : 'Biglietti disponibili: '+ (totalTicket-soldTicket)}<br><br>`;
   });
   resHTML += "</div>";
  
