@@ -8,7 +8,7 @@
       let totalTicket = v.querySelectorAll('.text-body--faint')[4].innerHTML.match(/\d+/);
       let soldTicket = v.querySelectorAll('.text-color--green')[0].innerHTML;
       let availableTicket = totalTicket-soldTicket;
-      resHTML += `<a href="https://www.eventbrite.com${linkHref}" style="font-size:16px"><b>${linkText}</b></a><br>${date}<br>${availableTicket===0 ? 'SOLDOUT!' : 'Biglietti disponibili: '+ (totalTicket-soldTicket)}<br><br>`;
+      resHTML += `<a href="https://www.eventbrite.com${linkHref}" style="font-size:16px"><b>${linkText}</b></a><br>${date}<br>${availableTicket===0 ? 'Sold out :(' : 'Biglietti disponibili: '+ (totalTicket-soldTicket)}<br><br>`;
   });
   resHTML += "</div>";
 
