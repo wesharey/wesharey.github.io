@@ -63,10 +63,23 @@ body {
     text-align: center;
 }
 .site-header h1 {
-    background: url(../img/weshare.jpg) no-repeat center center;
-    height: 120px;
-    text-indent: -9999px;
+    display: flex;   
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
+.site-header__logo {
+    width: 80px;
+    height: 80px;
+    margin-right: 5px;
+}
+.site-header__text {
+    font-size: 1.5em;
+}
+.site-header__text__we {
+    font-weight: normal;
+}
+
 main {
     padding: 1px 20px;
 }
@@ -118,10 +131,8 @@ iframe{
 .event__date__time {
     color: #999;
 }
-.event__image {
-    margin: 20px 0;
-}
 .event__image img {
+    margin: 20px 0;
     display: block;
     width: 100%;
     max-width: 400px;
