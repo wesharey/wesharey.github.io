@@ -44,39 +44,35 @@ textarea {
     resize: vertical;
 }
 
-.browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
 body {
+    color: #333;
     margin: 0 auto;
-    padding: 15px;
+    padding: 0 15px;
     background: #eee;
-    max-width:800px;
+    max-width: 1024px;
 }
-header, main {
-    background: #fff;
+.site-header, main {
+    background: white;
     margin: 0 auto;
 }
-header{
+.site-header {
     text-align: center;
 }
-main {
-    display: flex;
-    padding: 20px;
+.site-header h1 {
+    background: url(../img/weshare.jpg) no-repeat center center;
+    height: 120px;
+    text-indent: -9999px;
 }
-img {
-    margin: 1em 0 0;
-    width: 287px;
-    height: auto;
+main {
+    padding: 1px 20px;
+}
+.weshare-info {
+    padding: 1px 20px;
+    background-image: linear-gradient(white, #EEE 50%)
 }
 a{
     text-decoration: none;
@@ -96,85 +92,49 @@ iframe{
     font-style: italic;
 }
 
+/* EVENT DATA */
 
-
-
-
-
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
-
-   @media only screen and (min-width: 35em) {
-
-   }
-
-   @media print,
-   (-o-min-device-pixel-ratio: 5/4),
-   (-webkit-min-device-pixel-ratio: 1.25),
-   (min-resolution: 120dpi) {
-
-   }
-
-   @media only screen 
-   and (max-width : 600px) {
-    main{
-        flex-direction: column-reverse;
-    }
-
-    iframe{
-        margin-top: 30px;
-    }
-
+/*
+.events__data__loading {
+    
 }
+*/
 
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-   .hidden {
-    display: none !important;
-    visibility: hidden;
-}
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
-
-.invisible {
-    visibility: hidden;
-}
-
-.clearfix:before,
-.clearfix:after {
-    content: " ";
+.event:after {
+    content: "";
+    clear: both;
     display: table;
 }
-
-.clearfix:after {
-    clear: both;
+.event__title {
+    margin: 1.5em 0 .5em;
+}
+.event__title:first-of-type {
+    margin-top: 20px;
+}
+.event__date {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.event__date__time {
+    color: #999;
+}
+.event__image {
+    margin: 20px 0;
+}
+.event__image img {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
 }
 
-.clearfix {
-    *zoom: 1;
+@media (min-width: 700px) {
+    .event__image {
+        float: left;
+        margin-right: 20px;
+    }
 }
+
 
 /* ==========================================================================
    Print styles
@@ -190,52 +150,7 @@ iframe{
         text-shadow: none !important;
     }
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
+    body {
+        content: "Save the trees, don't print!"
     }
 }
