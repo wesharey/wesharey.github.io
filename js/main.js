@@ -5,7 +5,7 @@
     const timeFormat = timeString => {
         return timeString.split(':').slice(0, 2).join(':');
     };
-    fetch("./mocks/weshare-events.now.sh.json")
+    fetch("https://weshare-events.now.sh/")
         .then(data => data.json())
         .then(data => {
             let output = document.getElementsByClassName('events__data')[0];

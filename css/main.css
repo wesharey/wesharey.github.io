@@ -106,6 +106,10 @@ iframe{
 
 /* EVENT DATA */
 
+.events__data__loading {
+    padding: 20px 0;
+}
+
 .event:after {
     content: "";
     clear: both;

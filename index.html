@@ -8,7 +8,6 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -20,11 +19,9 @@
     <main>
         <section class="events">
             <h1 class="events__title">Next events</h1>
-            <output class="events__data"></output>
-            <!--
-            <iframe src="https://www.eventbrite.com/calendar-widget?eid=28859963929&showPrivate=1&sig=AGbIMNzXE8azMZc_bAnSIZ3S912E-3GfOQ"
-            frameborder="0"></iframe>
-            -->
+            <output class="events__data">
+                <div class="events__data__loading">(loading events from EventBrite)</div>
+            </output>
         </section>
     </main>
     <article class="weshare-info">
