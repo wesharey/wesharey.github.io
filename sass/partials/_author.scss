@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+%centeredWhite {
+    background: white;
+    margin: 1em auto;
+    padding: $base-space;
+}
+
+%clearfix:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0 $base-space;
+    background: #eee;
+    max-width: 1024px;
+}
+.site-header {
+    @extend %centeredWhite;
+    h1 {
+        display: flex;   
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+    &__logo {
+        width: 80px;
+        height: 80px;
+        margin-right: 5px;
+    }
+    &__text {
+        font-size: 1.5em;
+        &__we {
+            font-weight: normal;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color:#00A8F2;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+/* EVENT DATA */
+
+.event {
+    @extend %centeredWhite;
+    @extend %clearfix;
+    &__title {
+        margin-top: 0;
+    }
+    &__date {
+        font-size: 1.2em;
+        font-weight: bold;
+        &__time {
+            color: #999;
+        }
+    }
+    &__image {
+        margin: $base-space $base-space 5px 0;
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        @media (min-width: 700px) {
+            float: left;
+            margin-right: $base-space;
+        }
+    }
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 18px;
+    color: #666;
+}
