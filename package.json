@@ -1,0 +1,28 @@
+{
+  "name": "weshare",
+  "version": "1.3.0",
+  "description": "WeShare website with the next events and explanation of the WeShare project.",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-sassjs": "^0.1.7",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "dependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wesharey/weshare.git"
+  },
+  "keywords": [
+    "WeShare"
+  ],
+  "author": "Andrea Verlicchi, Giorgio Aquino, Alberto Narda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wesharey/weshare/issues"
+  },
+  "homepage": "https://github.com/wesharey/weshare#readme"
+}
