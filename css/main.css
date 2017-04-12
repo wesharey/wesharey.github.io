@@ -44,32 +44,35 @@ textarea {
     resize: vertical;
 }
 
-
-
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
 body {
+    color: #333;
     margin: 0 auto;
-    padding: 15px;
+    padding: 0 15px;
     background: #eee;
-    max-width:800px;
+    max-width: 1024px;
 }
-header, main {
-    background: #fff;
+.site-header, main {
+    background: white;
     margin: 0 auto;
 }
-header{
+.site-header {
     text-align: center;
 }
-main {
-    padding: 20px;
+.site-header h1 {
+    background: url(../img/weshare.jpg) no-repeat center center;
+    height: 120px;
+    text-indent: -9999px;
 }
-img {
-    margin: 1em 0 0;
-    width: 287px;
-    height: auto;
+main {
+    padding: 1px 20px;
+}
+.weshare-info {
+    padding: 1px 20px;
+    background-image: linear-gradient(white, #EEE 50%)
 }
 a{
     text-decoration: none;
@@ -89,10 +92,50 @@ iframe{
     font-style: italic;
 }
 
+.events__title {
+    /* VisuallyHidden */
+    position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+}
 
+/* EVENT DATA */
 
+.event:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.event__title {
+    margin: 1.5em 0 .5em;
+}
+.event__title:first-of-type {
+    margin-top: 20px;
+}
+.event__time {
+    font-weight: bold;
+}
+.event__image {
+    margin: 20px 0;
+}
+.event__image img {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
 
-
+@media (min-width: 700px) {
+    .event__image {
+        float: left;
+        margin-right: 20px;
+    }
+}
 
 
 /* ==========================================================================
