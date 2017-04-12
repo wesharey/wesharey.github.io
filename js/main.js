@@ -23,6 +23,6 @@
                     <div class="event__description">${event.description.html}</div>
                 </article>`;
             }).join('');
-            ll = new LazyLoad();
+            new LazyLoad();
         });
 }());
