@@ -28,7 +28,7 @@
         </section>
     </main>
     <article class="weshare-info">
-        <h1>What's WeShare?</h1>
+        <h1>Che cos'è WeShare?</h1>
         <p>
             Ogni giorno, release dopo release, <strong>ciascun team porta innovazione</strong> attraverso l’adozione
             di nuove tecnologie, nuovi framework, nuovi tool, nuove soluzioni (o hack) a problemi comuni.
@@ -42,7 +42,7 @@
             lavoro. Non è una community, è <strong>aperto a tutti</strong> coloro che sono interessati a quello che hai
             da far vedere.
         </p>
-        <h2>How does it work?</h2>
+        <h2>Posso partecipare?</h2>
         <ol>
             <li>
                 <strong>Facci sapere cosa vorresti condividere</strong> e in che formato (vedi sotto).Ti possiamo aiutare
@@ -56,7 +56,7 @@
                 <strong>Ricevi le iscrizioni</strong> al tuo evento.
             </li>
         </ol>
-        <h2>Possible event formats</h2>
+        <h3>Formati eventi possibili</h3>
         <ul>
             <li>
                 <strong>Presentazioni</strong>, nuove o già pronte. (anche se utilizzate ad un evento in YNAP, qualcuno
@@ -69,7 +69,7 @@
                 <strong>Condivisione</strong> di una conferenza / di un tutorial che hai seguito
             </li>
         </ul>
-        <h2>Take part of it!</h2>
+        <h2>Vuoi proporre un evento?</h2>
         <p>
             Per partecipare basta cliccare il link seguente e compilare il form. Ti contatteremo appena avremo ricevuto la tua candidatura.
         </p>
@@ -87,41 +87,7 @@
             A presto!<br /> WeShare™ team.
         </p>
     </article>
-
-
-
-    
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-    <script>
-        (function(){
-            const dateFormat = dateString => {
-                return dateString.split('-').reverse().join('/');
-            };
-            const timeFormat = timeString => {
-                return timeString.split(':').slice(0, 2).join(':');
-            };
-            $.getJSON("./mocks/weshare-events.now.sh.json")
-                .done(data => {
-                    let html = "";
-                    data.forEach(event => {
-                        let startDateTime = event.start.local.split('T');
-                        let startDate = dateFormat(startDateTime[0]);
-                        let startTime = timeFormat(startDateTime[1]);
-                        let endTime = timeFormat(event.end.local.split('T')[1]);
-                        html += `<article class="event">
-                            <h2 class="event__title"><a href="${event.url}">${event.name.text}</a></h2>
-                            <div class="event__time">${startDate} <time>${startTime}</time> &rarr; <time>${endTime}</time></div>
-                            <div class="event__image"><img src="${event.logo.url}" width="200" height="100"></div>
-                            <div class="event__description">${event.description.html}</div>
-                        </article>`;
-                    });
-                    $('.events__data').append(html);
-                });
-            }());
-    </script>
-</script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

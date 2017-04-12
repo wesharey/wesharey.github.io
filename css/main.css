@@ -118,6 +118,7 @@ iframe{
     margin-top: 20px;
 }
 .event__time {
+    font-size: 1.2em;
     font-weight: bold;
 }
 .event__image {
