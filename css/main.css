@@ -117,9 +117,12 @@ iframe{
 .event__title:first-of-type {
     margin-top: 20px;
 }
-.event__time {
+.event__date {
     font-size: 1.2em;
     font-weight: bold;
+}
+.event__date__time {
+    color: #999;
 }
 .event__image {
     margin: 20px 0;
