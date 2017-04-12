@@ -58,29 +58,43 @@ textarea {
 
 body {
     margin: 0 auto;
-    width: 212px;
+    padding: 15px;
+    background: #eee;
+    max-width:800px;
+}
+header, main {
+    background: #fff;
+    margin: 0 auto;
+}
+header{
+    text-align: center;
 }
 main {
     display: flex;
-    height: 100vh;
-    flex-direction: column;
-    align-items: stretch;
+    padding: 20px;
 }
 img {
     margin: 1em 0 0;
-    width: 100%;
+    width: 287px;
     height: auto;
 }
-iframe {
-    flex-grow: 1;
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color:#00A8F2;
 }
-
-
-
-
-
-
-
+a:hover{
+    text-decoration: underline;
+}
+iframe{
+    height: 585px;
+    width: 219px;
+    display: block;
+    margin: 0 auto;
+}
+.motto{
+    font-style: italic;
+}
 
 
 
@@ -91,14 +105,26 @@ iframe {
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+   @media only screen and (min-width: 35em) {
 
-}
+   }
 
-@media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
+   @media print,
+   (-o-min-device-pixel-ratio: 5/4),
+   (-webkit-min-device-pixel-ratio: 1.25),
+   (min-resolution: 120dpi) {
+
+   }
+
+   @media only screen 
+   and (max-width : 600px) {
+    main{
+        flex-direction: column-reverse;
+    }
+
+    iframe{
+        margin-top: 30px;
+    }
 
 }
 
@@ -106,7 +132,7 @@ iframe {
    Helper classes
    ========================================================================== */
 
-.hidden {
+   .hidden {
     display: none !important;
     visibility: hidden;
 }
@@ -154,7 +180,7 @@ iframe {
    Print styles
    ========================================================================== */
 
-@media print {
+   @media print {
     *,
     *:before,
     *:after {
