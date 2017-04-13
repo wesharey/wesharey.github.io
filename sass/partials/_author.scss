@@ -4,7 +4,8 @@
 
 %centeredWhite {
     background: white;
-    margin: 1em auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: $base-space;
 }
 
@@ -55,12 +56,14 @@ a {
 .events {
     &__title {
         padding: 0 $base-space;
+        text-align: center;
     }
 }
 
 .event {
     @extend %centeredWhite;
     @extend %clearfix;
+    margin-bottom: $base-space;
     &__title {
         margin-top: 0;
     }
@@ -87,16 +90,25 @@ a {
             margin-right: $base-space;
         }
     }
-    &__cta {
+    %fakeButton {
         clear: left;
-        background-color: $cta-color;
+        color: white;
         border-radius: $base-space;
         text-align: center;
-        color: white;
         display: block;
         padding: $base-space/2;
-        max-width: 13em;
         margin: $base-space auto 0 auto;
+    }
+    &__sold-out {
+        @extend %fakeButton;
+        background-color: $orange;
+        font-size: 20px;
+        max-width: 9em;
+    }
+    &__cta {
+        @extend %fakeButton;
+        background-color: $cta-color;
+        max-width: 13em;
         > span {
             display: block;
         }
@@ -106,9 +118,6 @@ a {
         &__available-seats {
             font-weight: normal;
         }
-    }
-    &__sold-out {
-        color: $orange;
     }
 }
 

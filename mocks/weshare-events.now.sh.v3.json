@@ -1,0 +1,432 @@
+[
+    {
+        "id": 33209620870,
+        "name": {
+            "text": "Codemotion2017: Make your animations perform well",
+            "html": "Codemotion2017: Make your animations perform well"
+        },
+        "start": {
+            "timezone": "Europe/Rome",
+            "local": "2017-04-18T11:00:00",
+            "utc": "2017-04-18T09:00:00Z"
+        },
+        "end": {
+            "timezone": "Europe/Rome",
+            "local": "2017-04-18T12:00:00",
+            "utc": "2017-04-18T10:00:00Z"
+        },
+        "url": "https://www.eventbrite.com/e/codemotion2017-make-your-animations-perform-well-tickets-33209620870",
+        "logo": {
+            "crop_mask": {
+                "top_left": {
+                    "x": 68,
+                    "y": 0
+                },
+                "width": 1464,
+                "height": 732
+            },
+            "original": {
+                "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29745894%2F192021396130%2F1%2Foriginal.jpg?s=2b2afe0fed3a40e2019dc20001bdf16d",
+                "width": 1600,
+                "height": 732
+            },
+            "id": "29745894",
+            "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29745894%2F192021396130%2F1%2Foriginal.jpg?h=200&w=450&rect=68%2C0%2C1464%2C732&s=f8d363d19e064e764c091732ce55821c",
+            "aspect_ratio": "2",
+            "edge_color": null,
+            "edge_color_set": true
+        },
+        "description": {
+            "text": "CSS animations have been around the web for some time already and have been helping us in many ways: they give the users feedback on their actions, lead them through a page, cheer them. Badly implemented animations on the other hand can be deadly to the website's performance and the user's delight. Let's learn together what are the best techniques to get our animations smooth.\nReport from Codemotion2017",
+            "html": "<P CLASS=\"talk__text\"><SPAN>CSS animations have been around the web for some time already and have been helping us in many ways: they give the users feedback on their actions, lead them through a page, cheer them. Badly implemented animations on the other hand can be deadly to the website's performance and the user's delight. Let's learn together what are the best techniques to get our animations smooth.</SPAN></P>\n<P CLASS=\"talk__text\"><EM>Report from Codemotion2017</EM></P>"
+        },
+        "capacity": 20
+    },
+    {
+        "id": 33617664339,
+        "name": {
+            "text": "Git-flow: a successful Git branching model [noslides]",
+            "html": "Git-flow: a successful Git branching model [noslides]"
+        },
+        "start": {
+            "timezone": "Europe/Rome",
+            "local": "2017-04-18T15:00:00",
+            "utc": "2017-04-18T13:00:00Z"
+        },
+        "end": {
+            "timezone": "Europe/Rome",
+            "local": "2017-04-18T16:00:00",
+            "utc": "2017-04-18T14:00:00Z"
+        },
+        "url": "https://www.eventbrite.com/e/git-flow-a-successful-git-branching-model-noslides-tickets-33617664339",
+        "logo": {
+            "crop_mask": {
+                "top_left": {
+                    "x": 0,
+                    "y": 0
+                },
+                "width": 800,
+                "height": 400
+            },
+            "original": {
+                "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F30360762%2F192021396130%2F1%2Foriginal.jpg?s=9f59bf9d74b22eb7e6df76b340ab8e95",
+                "width": 801,
+                "height": 400
+            },
+            "id": "30360762",
+            "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F30360762%2F192021396130%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C0%2C800%2C400&s=2de8ef5e3c61e681b3a6045d05749826",
+            "aspect_ratio": "2",
+            "edge_color": null,
+            "edge_color_set": true
+        },
+        "description": {
+            "text": "Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. It’s easy to learn and has a tiny footprint with lightning fast performance. It outclasses SCM tools like Subversion, CVS, Perforce, and ClearCase with features like cheap local branching, convenient staging areas, and multiple workflows.\nIn this event, we’ll discuss Vincent Driessen’s idea for a Successful Branching Model and how to use git-flow, a set of git extensions to provide high-level repository operations for Vincent Driessen's branching model.",
+            "html": "<P CLASS=\"MsoNormal\"><SPAN>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. It’s easy to learn and has a tiny footprint with lightning fast performance. It outclasses SCM tools like Subversion, CVS, Perforce, and ClearCase with features like cheap local branching, convenient staging areas, and multiple workflows.</SPAN></P>\n<P CLASS=\"MsoNormal\"><SPAN>In this event, we’ll discuss Vincent Driessen’s idea for a <A HREF=\"http://nvie.com/posts/a-successful-git-branching-model/\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">Successful Branching Model</A> and how to use <A HREF=\"https://github.com/nvie/gitflow\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">git-flow</A>, a set of git extensions to provide high-level repository operations for Vincent Driessen's branching model.</SPAN></P>"
+        },
+        "capacity": 20
+    },
+    {
+        "id": 33307276962,
+        "name": {
+            "text": "Debug avanzato di una solution F31",
+            "html": "Debug avanzato di una solution F31"
+        },
+        "start": {
+            "timezone": "Europe/Rome",
+            "local": "2017-04-20T12:00:00",
+            "utc": "2017-04-20T10:00:00Z"
+        },
+        "end": {
+            "timezone": "Europe/Rome",
+            "local": "2017-04-20T13:00:00",
+            "utc": "2017-04-20T11:00:00Z"
+        },
+        "url": "https://www.eventbrite.com/e/debug-avanzato-di-una-solution-f31-tickets-33307276962",
+        "logo": {
+            "crop_mask": {
+                "top_left": {
+                    "x": 0,
+                    "y": 0
+                },
+                "width": 1000,
+                "height": 500
+            },
+            "original": {
+                "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29881759%2F192021396130%2F1%2Foriginal.jpg?s=269ff4fdb82d2b461a8f31b0b3d694f6",
+                "width": 1000,
+                "height": 500
+            },
+            "id": "29881759",
+            "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29881759%2F192021396130%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C0%2C1000%2C500&s=82d8cbf39d2f9e8351b6c9370a4756fc",
+            "aspect_ratio": "2",
+            "edge_color": null,
+            "edge_color_set": true
+        },
+        "description": {
+            "text": "Talk/workshop su come eseguire un debug più accurato e avanzato di una solution F31.\nL'obbiettivo del talk è quindi quello di acquisire confidenza nell'eseguire il debug di un Online Store F31.\nAgenda:\n\n\nIntroduzione: come, quando e dove eseguire il debug di YTos e plugin\n\n\nEsempio pratico: debug di yTos, Yeti, e Plugin F31 su uno specifico OS (non WhiteOS)\n\n\nChecksolution tool\n\n\nPreview Rider IDE\n\n\n",
+            "html": "<P CLASS=\"MsoNormal\">Talk/workshop su come eseguire un debug più accurato e avanzato di una solution F31.</P>\n<P CLASS=\"MsoNormal\">L'obbiettivo del talk è quindi quello di acquisire confidenza nell'eseguire il debug di un Online Store F31.</P>\n<P CLASS=\"MsoNormal\">Agenda:</P>\n<UL>\n<LI>\n<P>Introduzione: come, quando e dove eseguire il debug di YTos e plugin</P>\n</LI>\n<LI>\n<P>Esempio pratico: debug di yTos, Yeti, e Plugin F31 su uno specifico OS (non WhiteOS)</P>\n</LI>\n<LI>\n<P>Checksolution tool</P>\n</LI>\n<LI>\n<P>Preview Rider IDE</P>\n</LI>\n</UL>\n<P><BR></P>"
+        },
+        "capacity": 25
+    },
+    {
+        "id": 33204971965,
+        "name": {
+            "text": "PostCSS in uno store YNAP",
+            "html": "PostCSS in uno store YNAP"
+        },
+        "start": {
+            "timezone": "Europe/Rome",
+            "local": "2017-04-26T11:00:00",
+            "utc": "2017-04-26T09:00:00Z"
+        },
+        "end": {
+            "timezone": "Europe/Rome",
+            "local": "2017-04-26T12:00:00",
+            "utc": "2017-04-26T10:00:00Z"
+        },
+        "url": "https://www.eventbrite.com/e/postcss-in-uno-store-ynap-tickets-33204971965",
+        "logo": {
+            "crop_mask": {
+                "top_left": {
+                    "x": 0,
+                    "y": 40
+                },
+                "width": 824,
+                "height": 412
+            },
+            "original": {
+                "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29739032%2F192021396130%2F1%2Foriginal.jpg?s=c841334e07d541e81a8d5ad1841f98b4",
+                "width": 825,
+                "height": 493
+            },
+            "id": "29739032",
+            "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29739032%2F192021396130%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C40%2C824%2C412&s=710e709e9c70b56c9c538960d9db3b1a",
+            "aspect_ratio": "2",
+            "edge_color": "#d93c07",
+            "edge_color_set": true
+        },
+        "description": {
+            "text": "Cos'è postCSS? Può aiutarci nello sviluppo front-end di uno store YNAP? Lo abbiamo usato per la release di Alberta Ferretti e in questo Talk vediamo cosa può fare(non solo autoprefixer) e come lo abbiamo integrato nel nostro workflow. ",
+            "html": "<P CLASS=\"talk__text\"><I><SPAN>Cos'è postCSS? Può aiutarci nello sviluppo front-end di uno store YNAP? Lo abbiamo usato per la release di Alberta Ferretti e in questo Talk vediamo cosa può fare(non solo autoprefixer) e come lo abbiamo integrato nel nostro workflow. </SPAN></I></P>"
+        },
+        "capacity": 20
+    },
+    {
+        "id": 33573157217,
+        "name": {
+            "text": "Git-flow: a successful Git branching model [noslides]",
+            "html": "Git-flow: a successful Git branching model [noslides]"
+        },
+        "start": {
+            "timezone": "Europe/Rome",
+            "local": "2017-04-26T12:00:00",
+            "utc": "2017-04-26T10:00:00Z"
+        },
+        "end": {
+            "timezone": "Europe/Rome",
+            "local": "2017-04-26T13:00:00",
+            "utc": "2017-04-26T11:00:00Z"
+        },
+        "url": "https://www.eventbrite.com/e/git-flow-a-successful-git-branching-model-noslides-tickets-33573157217",
+        "logo": {
+            "crop_mask": {
+                "top_left": {
+                    "x": 0,
+                    "y": 0
+                },
+                "width": 800,
+                "height": 400
+            },
+            "original": {
+                "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F30360810%2F192021396130%2F1%2Foriginal.jpg?s=15cc625e4db228700978f07988ce6110",
+                "width": 801,
+                "height": 400
+            },
+            "id": "30360810",
+            "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F30360810%2F192021396130%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C0%2C800%2C400&s=b20ecebb38e2c3fcbf0590454025c07d",
+            "aspect_ratio": "2",
+            "edge_color": null,
+            "edge_color_set": true
+        },
+        "description": {
+            "text": "Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. It’s easy to learn and has a tiny footprint with lightning fast performance. It outclasses SCM tools like Subversion, CVS, Perforce, and ClearCase with features like cheap local branching, convenient staging areas, and multiple workflows.\nIn this event, we’ll discuss Vincent Driessen’s idea for a Successful Branching Model and how to use git-flow, a set of git extensions to provide high-level repository operations for Vincent Driessen's branching model.",
+            "html": "<P CLASS=\"MsoNormal\"><SPAN>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. It’s easy to learn and has a tiny footprint with lightning fast performance. It outclasses SCM tools like Subversion, CVS, Perforce, and ClearCase with features like cheap local branching, convenient staging areas, and multiple workflows.</SPAN></P>\n<P CLASS=\"MsoNormal\"><SPAN>In this event, we’ll discuss Vincent Driessen’s idea for a <A HREF=\"http://nvie.com/posts/a-successful-git-branching-model/\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">Successful Branching Model</A> and how to use <A HREF=\"https://github.com/nvie/gitflow\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">git-flow</A>, a set of git extensions to provide high-level repository operations for Vincent Driessen's branching model.</SPAN></P>"
+        },
+        "capacity": 10
+    },
+    {
+        "id": 33209774329,
+        "name": {
+            "text": "Codemotion2017: Make your animations perform well",
+            "html": "Codemotion2017: Make your animations perform well"
+        },
+        "start": {
+            "timezone": "Europe/Rome",
+            "local": "2017-04-27T16:00:00",
+            "utc": "2017-04-27T14:00:00Z"
+        },
+        "end": {
+            "timezone": "Europe/Rome",
+            "local": "2017-04-27T17:00:00",
+            "utc": "2017-04-27T15:00:00Z"
+        },
+        "url": "https://www.eventbrite.com/e/codemotion2017-make-your-animations-perform-well-tickets-33209774329",
+        "logo": {
+            "crop_mask": {
+                "top_left": {
+                    "x": 68,
+                    "y": 0
+                },
+                "width": 1464,
+                "height": 732
+            },
+            "original": {
+                "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29745903%2F192021396130%2F1%2Foriginal.jpg?s=a35ece77ba2a4ecf347ba0a53a717aac",
+                "width": 1600,
+                "height": 732
+            },
+            "id": "29745903",
+            "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29745903%2F192021396130%2F1%2Foriginal.jpg?h=200&w=450&rect=68%2C0%2C1464%2C732&s=682c23526466a9b96b722ca2f2adeb03",
+            "aspect_ratio": "2",
+            "edge_color": null,
+            "edge_color_set": true
+        },
+        "description": {
+            "text": "CSS animations have been around the web for some time already and have been helping us in many ways: they give the users feedback on their actions, lead them through a page, cheer them. Badly implemented animations on the other hand can be deadly to the website's performance and the user's delight. Let's learn together what are the best techniques to get our animations smooth.\nReport from Codemotion2017",
+            "html": "<P CLASS=\"talk__text\"><SPAN>CSS animations have been around the web for some time already and have been helping us in many ways: they give the users feedback on their actions, lead them through a page, cheer them. Badly implemented animations on the other hand can be deadly to the website's performance and the user's delight. Let's learn together what are the best techniques to get our animations smooth.</SPAN></P>\n<P CLASS=\"talk__text\"><EM>Report from Codemotion2017</EM></P>"
+        },
+        "capacity": 12
+    },
+    {
+        "id": 33209796395,
+        "name": {
+            "text": "Codemotion2017: Unethical JavaScript",
+            "html": "Codemotion2017: Unethical JavaScript"
+        },
+        "start": {
+            "timezone": "Europe/Rome",
+            "local": "2017-05-10T10:00:00",
+            "utc": "2017-05-10T08:00:00Z"
+        },
+        "end": {
+            "timezone": "Europe/Rome",
+            "local": "2017-05-10T11:00:00",
+            "utc": "2017-05-10T09:00:00Z"
+        },
+        "url": "https://www.eventbrite.com/e/codemotion2017-unethical-javascript-tickets-33209796395",
+        "logo": {
+            "crop_mask": {
+                "top_left": {
+                    "x": 0,
+                    "y": 60
+                },
+                "width": 1920,
+                "height": 960
+            },
+            "original": {
+                "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29745943%2F192021396130%2F1%2Foriginal.jpg?s=2d704331c71b0df4500505ccfe1b0bc8",
+                "width": 1920,
+                "height": 1080
+            },
+            "id": "29745943",
+            "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29745943%2F192021396130%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C60%2C1920%2C960&s=e834b676a655817acbdd2365f531834a",
+            "aspect_ratio": "2",
+            "edge_color": "#33589f",
+            "edge_color_set": true
+        },
+        "description": {
+            "text": "As Douglas Crockford said, JavaScript is one of the most misunderstood languages. Also if the new standardizations brought to a more cohesive lingo, there are still development habits that create unpredictable effects and unreadable code. During this session, we'll dive in those habits discussing how the most recent versions of ECMA script help to write a cleaner and more sustainable JavaScript.\nReport from Codemotion2017",
+            "html": "<P CLASS=\"talk__text\"><SPAN>As Douglas Crockford said, JavaScript is one of the most misunderstood languages. Also if the new standardizations brought to a more cohesive lingo, there are still development habits that create unpredictable effects and unreadable code. During this session, we'll dive in those habits discussing how the most recent versions of ECMA script help to write a cleaner and more sustainable JavaScript.</SPAN></P>\n<P CLASS=\"talk__text\"><EM>Report from Codemotion2017</EM></P>"
+        },
+        "capacity": 12
+    },
+    {
+        "id": 33307210764,
+        "name": {
+            "text": "Debug avanzato di una solution F31",
+            "html": "Debug avanzato di una solution F31"
+        },
+        "start": {
+            "timezone": "Europe/Rome",
+            "local": "2017-05-25T11:00:00",
+            "utc": "2017-05-25T09:00:00Z"
+        },
+        "end": {
+            "timezone": "Europe/Rome",
+            "local": "2017-05-25T12:00:00",
+            "utc": "2017-05-25T10:00:00Z"
+        },
+        "url": "https://www.eventbrite.com/e/debug-avanzato-di-una-solution-f31-tickets-33307210764",
+        "logo": {
+            "crop_mask": {
+                "top_left": {
+                    "x": 0,
+                    "y": 0
+                },
+                "width": 1000,
+                "height": 500
+            },
+            "original": {
+                "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29881733%2F192021396130%2F1%2Foriginal.jpg?s=d2ca0b3733e2c26076dd46ab2d212d96",
+                "width": 1000,
+                "height": 500
+            },
+            "id": "29881733",
+            "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29881733%2F192021396130%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C0%2C1000%2C500&s=23d8f59d702f8f23a1fcc4624250fc3c",
+            "aspect_ratio": "2",
+            "edge_color": null,
+            "edge_color_set": true
+        },
+        "description": {
+            "text": "Talk/workshop su come eseguire un debug più accurato e avanzato di una solution F31.\nL'obbiettivo del talk è quindi quello di acquisire confidenza nell'eseguire il debug di un Online Store F31.\nAgenda:\n\n\nIntroduzione: come, quando e dove eseguire il debug di YTos e plugin\n\n\nEsempio pratico: debug di yTos, Yeti, e Plugin F31 su uno specifico OS (non WhiteOS)\n\n\nChecksolution tool\n\n\nPreview Rider IDE\n\n\n",
+            "html": "<P CLASS=\"MsoNormal\">Talk/workshop su come eseguire un debug più accurato e avanzato di una solution F31.</P>\n<P CLASS=\"MsoNormal\">L'obbiettivo del talk è quindi quello di acquisire confidenza nell'eseguire il debug di un Online Store F31.</P>\n<P CLASS=\"MsoNormal\">Agenda:</P>\n<UL>\n<LI>\n<P>Introduzione: come, quando e dove eseguire il debug di YTos e plugin</P>\n</LI>\n<LI>\n<P>Esempio pratico: debug di yTos, Yeti, e Plugin F31 su uno specifico OS (non WhiteOS)</P>\n</LI>\n<LI>\n<P>Checksolution tool</P>\n</LI>\n<LI>\n<P>Preview Rider IDE</P>\n</LI>\n</UL>\n<P><BR></P>"
+        },
+        "capacity": 16
+    },
+    {
+        "id": 33388723571,
+        "name": {
+            "text": "CSS Grid Layout + CSS Day knowledge sharing",
+            "html": "CSS Grid Layout + CSS Day knowledge sharing"
+        },
+        "start": {
+            "timezone": "Europe/Rome",
+            "local": "2017-05-30T12:00:00",
+            "utc": "2017-05-30T10:00:00Z"
+        },
+        "end": {
+            "timezone": "Europe/Rome",
+            "local": "2017-05-30T13:00:00",
+            "utc": "2017-05-30T11:00:00Z"
+        },
+        "url": "https://www.eventbrite.com/e/css-grid-layout-css-day-knowledge-sharing-tickets-33388723571",
+        "logo": {
+            "crop_mask": {
+                "top_left": {
+                    "x": 0,
+                    "y": 19
+                },
+                "width": 638,
+                "height": 319
+            },
+            "original": {
+                "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29986116%2F192021396130%2F1%2Foriginal.jpg?s=4856a257f47356fc074608f387891bed",
+                "width": 638,
+                "height": 359
+            },
+            "id": "29986116",
+            "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29986116%2F192021396130%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C19%2C638%2C319&s=5b2bd4d6140938a77e713ae22edba068",
+            "aspect_ratio": "2",
+            "edge_color": "#256f8b",
+            "edge_color_set": true
+        },
+        "description": {
+            "text": "Siamo partiti dalle tabelle. Abbiamo arrancato coi float. Stiamo respirando con flexbox. Ma per i nostri layout in CSS alle porte ci sono le griglie, abilitate di default in Chrome e Firefox da marzo 2017. Vedremo cosa ci riserva uno dei moduli CSS più sofisticati e flessibili di sempre, che promette di risolvere tutti i (o buona parte dei) nostri problemi di layout. Partendo da una panoramica generale delle funzionalità, vedremo qualche esempio, come affrontare il problema del fallback e del supporto a vecchie specifiche (IE, Edge), e gli strumenti per uno sviluppo semplice.\nReport from CSS Day 2017",
+            "html": "<P CLASS=\"talk__text\"><SPAN><SPAN>Siamo partiti dalle tabelle. Abbiamo arrancato coi float. Stiamo respirando con flexbox. Ma per i nostri layout in CSS alle porte ci sono le griglie, abilitate di default in Chrome e Firefox da marzo 2017. Vedremo cosa ci riserva uno dei moduli CSS più sofisticati e flessibili di sempre, che promette di risolvere tutti i (o buona parte dei) nostri problemi di layout. Partendo da una panoramica generale delle funzionalità, vedremo qualche esempio, come affrontare il problema del fallback e del supporto a vecchie specifiche (IE, Edge), e gli strumenti per uno sviluppo semplice.</SPAN></SPAN></P>\n<P CLASS=\"talk__text\"><SPAN>Report from CSS Day 2017</SPAN></P>"
+        },
+        "capacity": 25
+    },
+    {
+        "id": 33388774724,
+        "name": {
+            "text": "CSS Grid Layout + CSS Day knowledge sharing",
+            "html": "CSS Grid Layout + CSS Day knowledge sharing"
+        },
+        "start": {
+            "timezone": "Europe/Rome",
+            "local": "2017-06-08T14:00:00",
+            "utc": "2017-06-08T12:00:00Z"
+        },
+        "end": {
+            "timezone": "Europe/Rome",
+            "local": "2017-06-08T15:00:00",
+            "utc": "2017-06-08T13:00:00Z"
+        },
+        "url": "https://www.eventbrite.com/e/css-grid-layout-css-day-knowledge-sharing-tickets-33388774724",
+        "logo": {
+            "crop_mask": {
+                "top_left": {
+                    "x": 0,
+                    "y": 19
+                },
+                "width": 638,
+                "height": 319
+            },
+            "original": {
+                "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29986121%2F192021396130%2F1%2Foriginal.jpg?s=6e07467fa7ea7137e2d0f1b0e66c4675",
+                "width": 638,
+                "height": 359
+            },
+            "id": "29986121",
+            "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29986121%2F192021396130%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C19%2C638%2C319&s=1fc691b74665c6e11ee0f8dc05c211f9",
+            "aspect_ratio": "2",
+            "edge_color": "#256f8b",
+            "edge_color_set": true
+        },
+        "description": {
+            "text": "Siamo partiti dalle tabelle. Abbiamo arrancato coi float. Stiamo respirando con flexbox. Ma per i nostri layout in CSS alle porte ci sono le griglie, abilitate di default in Chrome e Firefox da marzo 2017. Vedremo cosa ci riserva uno dei moduli CSS più sofisticati e flessibili di sempre, che promette di risolvere tutti i (o buona parte dei) nostri problemi di layout. Partendo da una panoramica generale delle funzionalità, vedremo qualche esempio, come affrontare il problema del fallback e del supporto a vecchie specifiche (IE, Edge), e gli strumenti per uno sviluppo semplice.\nReport from CSS Day 2017",
+            "html": "<P CLASS=\"talk__text\"><SPAN><SPAN>Siamo partiti dalle tabelle. Abbiamo arrancato coi float. Stiamo respirando con flexbox. Ma per i nostri layout in CSS alle porte ci sono le griglie, abilitate di default in Chrome e Firefox da marzo 2017. Vedremo cosa ci riserva uno dei moduli CSS più sofisticati e flessibili di sempre, che promette di risolvere tutti i (o buona parte dei) nostri problemi di layout. Partendo da una panoramica generale delle funzionalità, vedremo qualche esempio, come affrontare il problema del fallback e del supporto a vecchie specifiche (IE, Edge), e gli strumenti per uno sviluppo semplice.</SPAN></SPAN></P>\n<P CLASS=\"talk__text\"><SPAN>Report from CSS Day 2017</SPAN></P>"
+        },
+        "capacity": 25
+    }
+]
