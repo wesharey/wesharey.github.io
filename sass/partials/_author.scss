@@ -16,14 +16,14 @@
 
 body {
     margin: 0 auto;
-    padding: 0 $base-space;
     background: #eee;
-    max-width: 1024px;
+    max-width: 860px;
 }
+
 .site-header {
     @extend %centeredWhite;
     h1 {
-        display: flex;   
+        display: flex;
         align-items: center;
         justify-content: center;
         margin: 0;
@@ -34,7 +34,7 @@ body {
         margin-right: 5px;
     }
     &__text {
-        font-size: 1.5em;
+        font-size: 1.3em;
         &__we {
             font-weight: normal;
         }
@@ -52,6 +52,12 @@ a {
 
 /* EVENT DATA */
 
+.events {
+    &__title {
+        padding: 0 $base-space;
+    }
+}
+
 .event {
     @extend %centeredWhite;
     @extend %clearfix;
@@ -59,8 +65,8 @@ a {
         margin-top: 0;
     }
     &__description:after {
-        content: ""; 
-        display: table; 
+        content: "";
+        display: table;
         clear: both;
     }
     &__date {
@@ -89,7 +95,7 @@ a {
         color: white;
         display: block;
         padding: $base-space/2;
-        max-width: 18em;
+        max-width: 13em;
         margin: $base-space auto 0 auto;
         > span {
             display: block;
@@ -110,4 +116,8 @@ blockquote {
     font-style: italic;
     font-size: 18px;
     color: #666;
+}
+
+.weshare-info {
+    padding: 0 $base-space;
 }
