@@ -17,39 +17,38 @@
         </article>`;
     }).join('');
 
+    const getActionHtml = (actionElement, partecipants) => {
+        let seatsLeft = actionElement.dataset.capacity - partecipants;
+        if (!seatsLeft) return `<a class="event__sold-out" href="${actionElement.dataset.url}">Tutto esaurito :(</a>`;
+
+        return `<a class="event__cta" href="${actionElement.dataset.url}">
+            <span class="event__cta__book-now">Prenota il tuo posto</span>
+            <span class="event__cta__available-seats">${seatsLeft} posti disponibili</span>
+        </a>`;
+    };
+
+    const addActions = (eventsDataEl) => {
+        let actionEls = eventsDataEl.querySelectorAll('.event__action');
+        actionEls.forEach(actionElement => {
+            fetch("https://weshare-events.now.sh/?eventid="+actionElement.dataset.id)
+                .then(data => data.json())
+                .then(data => {
+                    actionElement.innerHTML = getActionHtml(actionElement, data.partecipants);
+                });
+        });
+    };
+
     // Pre-check
     let eventsDataEls = document.getElementsByClassName('events__data');
     if (!eventsDataEls.length) return;
-    let eventsDataEl = eventsDataEls[0];
+    let eventsDataElement = eventsDataEls[0];
 
     //fetch("./mocks/weshare-events.now.sh.v3.json")
     fetch("https://weshare-events.now.sh/")
         .then(data => data.json())
         .then(data => {
-            eventsDataEl.innerHTML = getEventsHtml(data);
-
-            let actionEls = eventsDataEl.querySelectorAll('.event__action');
-            actionEls.forEach(el => {
-                fetch("https://weshare-events.now.sh/?eventid="+el.dataset.id)
-                    .then(data => data.json())
-                    .then(data => {
-                        console.log(data);
-                        let seatsLeft = el.dataset.capacity - data.partecipants;
-                        if (seatsLeft) {
-                            el.innerHTML = `<a class="event__cta" href="${el.dataset.url}">
-                                <span class="event__cta__book-now">Prenota il tuo posto</span>
-                                <span class="event__cta__available-seats">${seatsLeft} posti disponibili</span>
-                            </a>`;
-                        }
-                        else {
-                            el.innerHTML = `<a class="event__sold-out" href="${el.dataset.url}">Tutto esaurito :(</a>`
-                        }
-                    });
-            });
-
-
-
-
+            eventsDataElement.innerHTML = getEventsHtml(data);
+            addActions(eventsDataElement);
             new LazyLoad({elements_selector: ".event__image"});
         });
 }());
