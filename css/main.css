@@ -447,7 +447,8 @@ textarea {
    ========================================================================== */
 .site-header, .event {
   background: white;
-  margin: 1em auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 20px;
 }
 
@@ -497,6 +498,11 @@ a:hover {
 /* EVENT DATA */
 .events__title {
   padding: 0 20px;
+  text-align: center;
+}
+
+.event {
+  margin-bottom: 20px;
 }
 
 .event__title {
@@ -533,16 +539,25 @@ a:hover {
   }
 }
 
-.event__cta {
+.event .event__sold-out, .event .event__cta {
   clear: left;
-  background-color: darkorange;
+  color: white;
   border-radius: 20px;
   text-align: center;
-  color: white;
   display: block;
   padding: 10px;
-  max-width: 13em;
   margin: 20px auto 0 auto;
+}
+
+.event__sold-out {
+  background-color: darkorange;
+  font-size: 20px;
+  max-width: 9em;
+}
+
+.event__cta {
+  background-color: #00A8F2;
+  max-width: 13em;
 }
 
 .event__cta > span {
@@ -555,10 +570,6 @@ a:hover {
 
 .event__cta__available-seats {
   font-weight: normal;
-}
-
-.event__sold-out {
-  color: darkorange;
 }
 
 blockquote {
