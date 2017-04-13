@@ -459,9 +459,8 @@ textarea {
 
 body {
   margin: 0 auto;
-  padding: 0 20px;
   background: #eee;
-  max-width: 1024px;
+  max-width: 860px;
 }
 
 .site-header h1 {
@@ -478,7 +477,7 @@ body {
 }
 
 .site-header__text {
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 .site-header__text__we {
@@ -496,6 +495,10 @@ a:hover {
 }
 
 /* EVENT DATA */
+.events__title {
+  padding: 0 20px;
+}
+
 .event__title {
   margin-top: 0;
 }
@@ -532,13 +535,13 @@ a:hover {
 
 .event__cta {
   clear: left;
-  background-color: #00A8F2;
+  background-color: darkorange;
   border-radius: 20px;
   text-align: center;
   color: white;
   display: block;
   padding: 10px;
-  max-width: 18em;
+  max-width: 13em;
   margin: 20px auto 0 auto;
 }
 
@@ -562,6 +565,10 @@ blockquote {
   font-style: italic;
   font-size: 18px;
   color: #666;
+}
+
+.weshare-info {
+  padding: 0 20px;
 }
 
 /* ==========================================================================
