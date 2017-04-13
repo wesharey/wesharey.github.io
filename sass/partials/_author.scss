@@ -44,10 +44,10 @@ body {
 a {
     text-decoration: none;
     font-weight: bold;
-    color:#00A8F2;
-}
-a:hover{
-    text-decoration: underline;
+    color: $links-color;
+    &:hover{
+        text-decoration: underline;
+    }
 }
 
 /* EVENT DATA */
@@ -57,6 +57,11 @@ a:hover{
     @extend %clearfix;
     &__title {
         margin-top: 0;
+    }
+    &__description:after {
+        content: ""; 
+        display: table; 
+        clear: both;
     }
     &__date {
         font-size: 1.2em;
@@ -75,6 +80,29 @@ a:hover{
             float: left;
             margin-right: $base-space;
         }
+    }
+    &__cta {
+        clear: left;
+        background-color: $cta-color;
+        border-radius: $base-space;
+        text-align: center;
+        color: white;
+        display: block;
+        padding: $base-space/2;
+        max-width: 18em;
+        margin: $base-space auto 0 auto;
+        > span {
+            display: block;
+        }
+        &__book-now {
+            font-size: 20px;
+        }
+        &__available-seats {
+            font-weight: normal;
+        }
+    }
+    &__sold-out {
+        color: $orange;
     }
 }
 
