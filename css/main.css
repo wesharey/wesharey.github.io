@@ -500,6 +500,12 @@ a:hover {
   margin-top: 0;
 }
 
+.event__description:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .event__date {
   font-size: 1.2em;
   font-weight: bold;
@@ -522,6 +528,34 @@ a:hover {
     float: left;
     margin-right: 20px;
   }
+}
+
+.event__cta {
+  clear: left;
+  background-color: #00A8F2;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  display: block;
+  padding: 10px;
+  max-width: 18em;
+  margin: 20px auto 0 auto;
+}
+
+.event__cta > span {
+  display: block;
+}
+
+.event__cta__book-now {
+  font-size: 20px;
+}
+
+.event__cta__available-seats {
+  font-weight: normal;
+}
+
+.event__sold-out {
+  color: darkorange;
 }
 
 blockquote {
