@@ -10,8 +10,11 @@ Edit stylesheets in the SASS folder, then run:
 grunt
 ```
 
-## How to send the "next events" email
+## Javascript
 
-* Copy the `chromeScript.js`
-* Execute it in the Chrome console while visiting the [eventbrite.com/myevents](https://www.eventbrite.com/myevents/) page
-* Copy the generated HTML in the automatically generated e-mail.
+There is no bundler nor transpiler used nor required at the moment.
+
+The internal scripts file are inside the js folder.
+The external scripts are downloaded from [cdnjs.com](https://www.cdnjs.com)
+
+Feel free to use ES2015 as long the features you use are supported by Google Chrome
