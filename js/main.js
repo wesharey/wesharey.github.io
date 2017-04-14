@@ -43,11 +43,6 @@
     if (!eventsDataEls.length) return;
     let eventsDataElement = eventsDataEls[0];
 
-    // Register service worker if supported by current browser
-    if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("service-worker.js");
-    }
-
     //fetch("./mocks/weshare-events.now.sh.v3.json")
     fetch("https://weshare-events.now.sh/")
         .then(data => data.json())
