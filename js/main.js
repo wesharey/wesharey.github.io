@@ -13,7 +13,11 @@
             <div class="event__date">${relativeTime} &dash; <span class="event__date__time">dalle ${startTime} alle ${endTime}</span></div>
             <img class="event__image" data-original="${event.logo.url}" width="200" height="100">
             <div class="event__description">${event.description.html}</div>
-            <div class="event__action" data-id="${event.id}" data-url="${event.url}" data-capacity="${event.capacity}"></div>
+            <div class="event__action" data-id="${event.id}" data-url="${event.url}" data-capacity="${event.capacity}">
+                <a class="event__cta" href="${event.url}">
+                    <span class="event__cta__book-now">Prenota il tuo posto</span>
+                </a>
+            </div>
         </article>`;
     }).join('');
 
@@ -34,6 +38,9 @@
                 .then(data => data.json())
                 .then(data => {
                     actionElement.innerHTML = getActionHtml(actionElement, data.partecipants);
+                })
+                .catch(error => {
+                    console.error(error);
                 });
         });
     };
@@ -50,5 +57,9 @@
             eventsDataElement.innerHTML = getEventsHtml(data);
             addActions(eventsDataElement);
             new LazyLoad({elements_selector: ".event__image"});
+        })
+        .catch(error => {
+            eventsDataElement.innerHTML = '<div class="event event--loading--failed">Oops, questo è imbarazzante. Si è verificato un errore durante il caricamento dei dati. <a href="mailto:weshare@yoox.net">Segnalacelo</a>.</div>';
+            console.error(error);
         });
 }());
