@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wesharey/weshare.git"
+    "url": "git+https://github.com/wesharey/wesharey.github.io.git"
   },
   "keywords": [
     "WeShare"
@@ -22,7 +22,7 @@
   "author": "Andrea Verlicchi, Giorgio Aquino, Alberto Narda",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wesharey/weshare/issues"
+    "url": "https://github.com/wesharey/wesharey.github.io/issues"
   },
-  "homepage": "https://github.com/wesharey/weshare#readme"
+  "homepage": "https://wesharey.github.io"
 }
