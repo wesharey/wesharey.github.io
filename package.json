@@ -1,6 +1,6 @@
 {
   "name": "weshare",
-  "version": "1.6.0",
+  "version": "2.0.0",
   "description": "WeShare website with the next events and explanation of the WeShare project.",
   "main": "Gruntfile.js",
   "devDependencies": {
@@ -8,7 +8,9 @@
     "grunt-contrib-sassjs": "^0.1.7",
     "grunt-contrib-watch": "^1.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "sw-toolbox": "^3.6.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
