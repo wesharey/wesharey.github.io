@@ -46,9 +46,8 @@
     };
 
     // Pre-check
-    let eventsDataEls = document.getElementsByClassName('events__data');
-    if (!eventsDataEls.length) return;
-    let eventsDataElement = eventsDataEls[0];
+    let eventsDataElement = document.querySelector('.events__data');
+    if (!eventsDataElement) return;
 
     //fetch("./mocks/weshare-events.now.sh.v3.json")
     fetch("https://weshare-events.now.sh/")
