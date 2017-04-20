@@ -1,75 +1,40 @@
-const assetsCacheKey = "assets";
-const appShellCacheKey = "shell";
+(g => {
+    'use strict';
 
-const localCacheFiles = [
-    /*"",
-    "/offline.html",*/
-    "/img/weshare.svg",
-    "/css/main.css",
-    "/js/main.js"
-];
-const remoteCacheFiles = [
-    "https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/it.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/7.2.0/lazyload.transpiled.min.js"
-];
+    // Load the sw-tookbox library.
+    importScripts('/js/sw-toolbox/sw-toolbox.js');
 
-const isNavigateRequest = request => {
-    return request.mode === "navigate" ||
-        (request.method === "GET" &&
-        request.headers.get("Accept").includes("text/html"));
-};
+    // Network first get index.html
+    toolbox.router.get('/index.html', toolbox.networkFirst);
 
-const addToCache = (request, response) => {
-    if (response.ok) {
-        const copy = response.clone();
-        caches.open(assetsCacheKey).then(cache => {
-            cache.put(request, copy);
-        });
-    }
-    return response; // For Promise chain
-};
+    // Turn on debug logging, visible in the Developer Tools' console.
+    // g.toolbox.options.debug = true;
 
-const fetchFromCache = request => {
-    return caches.match(request).then(response => {
-        if (!response) {
-            throw Error(`The url ${request.url} was not found in cache`);
+    // Set up a handler for HTTP GET requests to eventbrite images
+    g.toolbox.router.get(/^https:\/\/img\.evbuc\.com\//, g.toolbox.cacheFirst, {
+        cache: {
+            name: 'eventbrite-images',
+            maxEntries: 10,
+            maxAgeSeconds: 2592000 //30 days * 24 * 60 * 60 seconds
         }
-        return response;
     });
-};
 
-self.addEventListener("install", event => {
-    event.waitUntil(
-        caches.open(appShellCacheKey).then(cache => {
-            return cache.addAll(localCacheFiles);
-        }).then(() => self.skipWaiting())
-    );
-});
+    // Set up a handler for HTTP GET requests to eventbrite data
+    g.toolbox.router.get(/^https:\/\/weshare\-events\.now\.sh\//, g.toolbox.fastest, {
+        cache: {
+            name: 'eventbrite-data',
+            maxAgeSeconds: 86400 //1 day * 24 * 60 * 60 seconds
+        }
+    });
+    
+    // Set up a handler for HTTP GET requests to CDNJS
+    g.toolbox.router.get(/^https:\/\/cdnjs\.cloudflare\.com\//, g.toolbox.cacheFirst, {
+        cache: {
+            name: 'cdnjs-data',
+            maxEntries: 4
+        }
+    });
 
-self.addEventListener("fetch", event => {
-    let request = event.request;
-    let urlObj = new URL(request.url);
-    if (isNavigateRequest(request)) {
-        // Content - network first, then cache, then offline page
-        console.log("Content request");
-        event.respondWith(
-            fetch(request)
-                .then((response) => addToCache(request, response))
-                .catch(() => fetchFromCache(request))
-                .catch(() => offlinePage())
-        );
-    }
-    else if ((remoteCacheFiles.indexOf(request.url) !== -1) ||
-        (localCacheFiles.indexOf(urlObj.pathname) !== -1)) {
-        console.log("Respond with file for " + request.url);
-        event.respondWith(
-            fetchFromCache(request)
-                .catch(() => fetch(request))
-        );
-    }
-    else {
-        console.log("Failed to respond from cache", request.url);
-    }
-});
+    g.toolbox.router.default = g.toolbox.networkFirst;
+
+})(self);
