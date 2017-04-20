@@ -16,7 +16,7 @@ toolbox.router.get(/^https:\/\/img\.evbuc\.com\//, toolbox.cacheFirst, {
 });
 
 // HTTP GET requests to eventbrite data are cached 1 day and refreshed after every call
-toolbox.router.get(/^https:\/\/weshare\-events\.now\.sh\//, toolbox.fastest, {
+toolbox.router.get(/^https:\/\/weshare\-events\.now\.sh\/$/, toolbox.fastest, {
     cache: {
         name: 'eventbrite-data',
         maxAgeSeconds: 86400 //1 day * 24 * 60 * 60 seconds
