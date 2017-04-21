@@ -1,6 +1,6 @@
 {
   "name": "weshare",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "WeShare website with the next events and explanation of the WeShare project.",
   "main": "Gruntfile.js",
   "devDependencies": {

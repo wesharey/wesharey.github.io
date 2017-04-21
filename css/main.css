@@ -452,7 +452,7 @@ textarea {
   padding: 20px;
 }
 
-.event:after {
+.event:after, .event__description:after {
   content: "";
   clear: both;
   display: table;
@@ -498,7 +498,14 @@ a:hover {
 /* EVENT DATA */
 .events__title {
   padding: 0 20px;
-  text-align: center;
+}
+
+.events__data {
+  display: block;
+}
+
+.events__data--loading .event__title, .events__data--loading .event__date, .events__data--loading .event__description p:before {
+  background: #EEE;
 }
 
 .event {
@@ -509,10 +516,9 @@ a:hover {
   margin-top: 0;
 }
 
-.event__description:after {
-  content: "";
-  display: table;
-  clear: both;
+.events__data--loading .event__description p:before {
+  content: " ";
+  padding: 0 6em;
 }
 
 .event__date {
@@ -580,6 +586,13 @@ blockquote {
 
 .weshare-info {
   padding: 0 20px;
+}
+
+@media (min-width: 700px) {
+  .events__title,
+  .weshare-info h1 {
+    text-align: center;
+  }
 }
 
 /* ==========================================================================

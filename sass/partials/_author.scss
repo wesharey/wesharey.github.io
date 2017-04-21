@@ -56,7 +56,19 @@ a {
 .events {
     &__title {
         padding: 0 $base-space;
-        text-align: center;
+    }
+    &__data {
+        display: block;
+    }
+}
+
+%loadingSkeletonBg {
+    background: #EEE;
+}
+
+%loadingSkeleton {
+    .events__data--loading & {
+        @extend %loadingSkeletonBg;
     }
 }
 
@@ -66,13 +78,18 @@ a {
     margin-bottom: $base-space;
     &__title {
         margin-top: 0;
+        @extend %loadingSkeleton;
     }
-    &__description:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+    &__description {
+        @extend %clearfix;
+        .events__data--loading & p:before {
+            content: " ";
+            @extend %loadingSkeletonBg;
+            padding: 0 6em;
+        }
+    }    
     &__date {
+        @extend %loadingSkeleton;
         font-size: 1.2em;
         font-weight: bold;
         &__time {
@@ -85,7 +102,7 @@ a {
         width: 100%;
         max-width: 400px;
         height: auto;
-        @media (min-width: 700px) {
+        @media (min-width: $breakpoint-large) {
             float: left;
             margin-right: $base-space;
         }
@@ -129,4 +146,11 @@ blockquote {
 
 .weshare-info {
     padding: 0 $base-space;
+}
+
+@media (min-width: $breakpoint-large) {
+    .events__title,
+    .weshare-info h1 {
+        text-align: center;
+    }
 }
