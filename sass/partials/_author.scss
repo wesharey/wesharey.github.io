@@ -62,19 +62,34 @@ a {
     }
 }
 
+%loadingSkeletonBg {
+    background: #EEE;
+}
+
+%loadingSkeleton {
+    .events__data--loading & {
+        @extend %loadingSkeletonBg;
+    }
+}
+
 .event {
     @extend %centeredWhite;
     @extend %clearfix;
     margin-bottom: $base-space;
     &__title {
         margin-top: 0;
+        @extend %loadingSkeleton;
     }
-    &__description:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+    &__description {
+        @extend %clearfix;
+        .events__data--loading & p:before {
+            content: " ";
+            @extend %loadingSkeletonBg;
+            padding: 0 6em;
+        }
+    }    
     &__date {
+        @extend %loadingSkeleton;
         font-size: 1.2em;
         font-weight: bold;
         &__time {

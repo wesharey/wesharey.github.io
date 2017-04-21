@@ -1,4 +1,4 @@
-(function(){
+(function () {
     const timeFormat = timeString => {
         return timeString.split(':').slice(0, 2).join(':');
     };
@@ -34,7 +34,7 @@
     const addActions = (eventsDataEl) => {
         let actionEls = eventsDataEl.querySelectorAll('.event__action');
         actionEls.forEach(actionElement => {
-            fetch("https://weshare-events.now.sh/?eventid="+actionElement.dataset.id)
+            fetch("https://weshare-events.now.sh/?eventid=" + actionElement.dataset.id)
                 .then(data => data.json())
                 .then(data => {
                     actionElement.innerHTML = getActionHtml(actionElement, data.partecipants);
@@ -45,6 +45,11 @@
         });
     };
 
+    const finishLoading = function (element, html) {
+        element.classList.remove('events__data--loading');
+        element.innerHTML = html;
+    };
+
     // Pre-check
     let eventsDataElement = document.querySelector('.events__data');
     if (!eventsDataElement) return;
@@ -53,12 +58,14 @@
     fetch("https://weshare-events.now.sh/")
         .then(data => data.json())
         .then(data => {
-            eventsDataElement.innerHTML = getEventsHtml(data);
+            finishLoading(eventsDataElement, getEventsHtml(data));
             addActions(eventsDataElement);
-            new LazyLoad({elements_selector: ".event__image"});
+            new LazyLoad({ elements_selector: ".event__image" });
         })
         .catch(error => {
-            eventsDataElement.innerHTML = '<div class="event event--loading--failed">Oops, questo è imbarazzante. Si è verificato un errore durante il caricamento dei dati. <a href="mailto:weshare@yoox.net">Segnalacelo</a>.</div>';
+            finishLoading(eventsDataElement, '<div class="event event--loading--failed">Oops, questo è imbarazzante. ' +
+                'Si è verificato un errore durante il caricamento dei dati. ' +
+                '<a href="mailto:weshare@yoox.net">Segnalacelo</a>.</div>');
             console.error(error);
         });
 }());
