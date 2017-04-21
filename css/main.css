@@ -452,7 +452,7 @@ textarea {
   padding: 20px;
 }
 
-.event:after {
+.event:after, .event__description:after {
   content: "";
   clear: both;
   display: table;
@@ -504,6 +504,10 @@ a:hover {
   display: block;
 }
 
+.events__data--loading .event__title, .events__data--loading .event__date, .events__data--loading .event__description p:before {
+  background: #EEE;
+}
+
 .event {
   margin-bottom: 20px;
 }
@@ -512,10 +516,9 @@ a:hover {
   margin-top: 0;
 }
 
-.event__description:after {
-  content: "";
-  display: table;
-  clear: both;
+.events__data--loading .event__description p:before {
+  content: " ";
+  padding: 0 6em;
 }
 
 .event__date {
