@@ -498,7 +498,10 @@ a:hover {
 /* EVENT DATA */
 .events__title {
   padding: 0 20px;
-  text-align: center;
+}
+
+.events__data {
+  display: block;
 }
 
 .event {
@@ -580,6 +583,13 @@ blockquote {
 
 .weshare-info {
   padding: 0 20px;
+}
+
+@media (min-width: 700px) {
+  .events__title,
+  .weshare-info h1 {
+    text-align: center;
+  }
 }
 
 /* ==========================================================================

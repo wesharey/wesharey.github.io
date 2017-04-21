@@ -56,7 +56,9 @@ a {
 .events {
     &__title {
         padding: 0 $base-space;
-        text-align: center;
+    }
+    &__data {
+        display: block;
     }
 }
 
@@ -85,7 +87,7 @@ a {
         width: 100%;
         max-width: 400px;
         height: auto;
-        @media (min-width: 700px) {
+        @media (min-width: $breakpoint-large) {
             float: left;
             margin-right: $base-space;
         }
@@ -129,4 +131,11 @@ blockquote {
 
 .weshare-info {
     padding: 0 $base-space;
+}
+
+@media (min-width: $breakpoint-large) {
+    .events__title,
+    .weshare-info h1 {
+        text-align: center;
+    }
 }
