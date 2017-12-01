@@ -2,11 +2,18 @@
    Author's custom styles
    ========================================================================== */
 
+%visuallyHidden {
+    height: 0;
+    text-indent: -9999;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
 %centeredWhite {
     background: white;
-    margin-left: auto;
-    margin-right: auto;
-    padding: $base-space;
+    margin: 0 auto;
+    padding: 0 $base-space;
 }
 
 %clearfix:after {
@@ -19,10 +26,12 @@ body {
     margin: 0 auto;
     background: #eee;
     max-width: 860px;
+    font-size: 1rem;
 }
 
 .site-header {
     @extend %centeredWhite;
+    padding-top: $base-space;
     h1 {
         display: flex;
         align-items: center;
@@ -55,6 +64,7 @@ a {
 
 .events {
     &__title {
+        @extend %centeredWhite;
         padding: 0 $base-space;
     }
     &__data {
@@ -75,7 +85,8 @@ a {
 .event {
     @extend %centeredWhite;
     @extend %clearfix;
-    margin-bottom: $base-space;
+    padding-top: $base-space / 2;
+    padding-bottom: $base-space / 2;
     &__title {
         margin-top: 0;
         @extend %loadingSkeleton;
@@ -145,12 +156,26 @@ blockquote {
 }
 
 .weshare-info {
-    padding: 0 $base-space;
+    @extend %centeredWhite;
+    padding: $base-space;
+    &__title {
+        @extend %visuallyHidden;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+}
+
+.site-footer {   
+    font-size: 0.9rem;
+    padding: $base-space;
 }
 
 @media (min-width: $breakpoint-large) {
     .events__title,
-    .weshare-info h1 {
+    .weshare-info h1,
+    .weshare-info h2,
+    .site-footer {
         text-align: center;
-    }
+    }     
 }

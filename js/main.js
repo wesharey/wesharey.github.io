@@ -63,8 +63,8 @@
             new LazyLoad({ elements_selector: ".event__image" });
         })
         .catch(error => {
-            finishLoading(eventsDataElement, '<div class="event event--loading--failed">Oops, questo è imbarazzante. ' +
-                'Si è verificato un errore durante il caricamento dei dati. ' +
+            finishLoading(eventsDataElement, '<div class="event event--loading--failed">Oops, sembra che il servizio ' +
+                'per caricare i dati degli eventi non sia disponibile. Riprova più tardi o ' +
                 '<a href="mailto:weshare@yoox.net">Segnalacelo</a>.</div>');
             console.error(error);
         });

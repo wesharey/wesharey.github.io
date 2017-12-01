@@ -1,4 +1,3 @@
-/*# sourceMappingURL=main.css.map */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -445,11 +444,18 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-.site-header, .event {
+.weshare-info__title {
+  height: 0;
+  text-indent: -9999;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header, .events__title, .event, .weshare-info {
   background: white;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .event:after, .event__description:after {
@@ -462,6 +468,11 @@ body {
   margin: 0 auto;
   background: #eee;
   max-width: 860px;
+  font-size: 1rem;
+}
+
+.site-header {
+  padding-top: 20px;
 }
 
 .site-header h1 {
@@ -509,7 +520,8 @@ a:hover {
 }
 
 .event {
-  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .event__title {
@@ -585,12 +597,23 @@ blockquote {
 }
 
 .weshare-info {
-  padding: 0 20px;
+  padding: 20px;
+}
+
+.weshare-info h2 {
+  font-size: 1.2rem;
+}
+
+.site-footer {
+  font-size: 0.9rem;
+  padding: 20px;
 }
 
 @media (min-width: 700px) {
   .events__title,
-  .weshare-info h1 {
+  .weshare-info h1,
+  .weshare-info h2,
+  .site-footer {
     text-align: center;
   }
 }
@@ -608,3 +631,6 @@ blockquote {
     text-shadow: none !important;
   }
 }
+ 
+
+ /*# sourceMappingURL= main.css.map */
