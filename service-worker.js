@@ -21,12 +21,5 @@ toolbox.router.get(/^https:\/\/cdnjs\.cloudflare\.com\//, toolbox.cacheFirst, {
 	}
 });
 
-// HTTP GET requests to eventbrite data are cached 1 day and refreshed after every call
-toolbox.router.get("https://www.eventbriteapi.com/", toolbox.fastest, {
-	cache: {
-		name: "eventbrite-data",
-	}
-});
-
 // All other requests are served network-first - so they're cached for offline
 toolbox.router.default = toolbox.networkFirst;
