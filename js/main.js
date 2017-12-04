@@ -1,4 +1,7 @@
 (function () {
+    const eventbriteToken = "6BGXJFRC4WZTG4KVWARZ";
+    const getOwnedLiveEventsUrl = "https://www.eventbriteapi.com/v3/users/me/owned_events/?status=live&token=" + eventbriteToken;
+
     const timeFormat = timeString => {
         return timeString.split(':').slice(0, 2).join(':');
     };
@@ -55,10 +58,10 @@
     if (!eventsDataElement) return;
 
     //fetch("./mocks/weshare-events.now.sh.v3.json")
-    fetch("https://weshare-events.now.sh/")
+    fetch(getOwnedLiveEventsUrl)
         .then(data => data.json())
         .then(data => {
-            finishLoading(eventsDataElement, getEventsHtml(data));
+            finishLoading(eventsDataElement, getEventsHtml(data.events));
             addActions(eventsDataElement);
             new LazyLoad({ elements_selector: ".event__image" });
         })
