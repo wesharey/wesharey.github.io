@@ -29,9 +29,9 @@
 		</article>`;
 	}).join("");
 
-	const eventsLoadHandler = function (element, html) {
-		element.classList.remove("events__data--loading");
-		element.innerHTML = html;
+	const eventsLoadHandler = function (eventsInfoElement, html) {
+		eventsInfoElement.classList.remove("events__data--loading");
+		eventsInfoElement.innerHTML = html;
 	};
 
 	const renderEvents = eventsData => {
@@ -69,8 +69,8 @@
 	};
 
 	const updateCallToActionButtons = (eventsDataEl, attendeesData) => {
-		let actionEls = eventsDataEl.querySelectorAll(".event__action");
-		actionEls.forEach(actionElement => {
+		let callToActionButtons = eventsDataEl.querySelectorAll(".event__action");
+		callToActionButtons.forEach(actionElement => {
 			actionElement.innerHTML = getActionHtml(actionElement, attendeesData);
 		});
 	};
