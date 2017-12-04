@@ -1,15 +1,18 @@
-(function () {
-	const eventbriteToken = "6BGXJFRC4WZTG4KVWARZ";
+(function (moment, LazyLoad) {
+	const eventsInfoElement = document.querySelector(".events__data");
+	const s3Bucket = "https://s3.eu-central-1.amazonaws.com/weshare-events-eu-central/";
+	const eventsJsonFile = s3Bucket + "events.json";
+	const attendeesJsonFile = s3Bucket + "attendees.json";
 
-	const getOwnedLiveEventsUrl = (token) => "https://www.eventbriteapi.com/v3/users/me/owned_events/?status=live&token=" + token;
-	const getEventDetailUrl = (token, eventId) => `https://www.eventbriteapi.com/v3/events/${eventId}/attendees/?status=attending&token=` + token;
+	// EVENTS
+	// ------
 
 	const timeFormat = timeString => {
 		return timeString.split(":").slice(0, 2).join(":");
 	};
 
 	const getEventsHtml = data => data.map(event => {
-		let relativeTime = window.moment(event.start.local).calendar();
+		let relativeTime = moment(event.start.local).calendar();
 		let startDateTime = event.start.local.split("T");
 		let startTime = timeFormat(startDateTime[1]);
 		let endTime = timeFormat(event.end.local.split("T")[1]);
@@ -26,47 +29,61 @@
 		</article>`;
 	}).join("");
 
-	const getActionHtml = (actionElement, attendees) => {
-		let seatsLeft = actionElement.dataset.capacity - attendees;
-		if (!seatsLeft) return `<a class="event__sold-out" href="${actionElement.dataset.url}">Tutto esaurito :(</a>`;
+	const eventsLoadHandler = function (eventsInfoElement, html) {
+		eventsInfoElement.classList.remove("events__data--loading");
+		eventsInfoElement.innerHTML = html;
+	};
+
+	const renderEvents = eventsData => {
+		eventsLoadHandler(eventsInfoElement, getEventsHtml(eventsData));
+		new LazyLoad({ elements_selector: ".event__image" });
+		getAttendees(attendeesJsonFile);
+	};
+
+	const renderError = () => {
+		eventsLoadHandler(eventsInfoElement, `<div class="event event--loading--failed">Oops, sembra che
+			il servizio per caricare i dati degli eventi non sia disponibile. Riprova più tardi,
+			oppure <a href="mailto:weshare@yoox.net">segnalacelo</a>.</div>`);
+	};
+
+	const getEvents = (jsonFile) => {
+		fetch(jsonFile)
+			.then(data => data.json())
+			.then(renderEvents)
+			.catch(renderError);
+	};
+
+	// ATTENDEES
+	// ---------
+
+	const getActionHtml = (actionElement, attendeesData) => {
+		let attendeesCount = attendeesData[actionElement.dataset.id] || 0;
+		let eventCapacity = parseInt(actionElement.dataset.capacity, 10);
+		let seatsLeft = eventCapacity - attendeesCount;
+		if (seatsLeft <= 0) return `<a class="event__sold-out" href="${actionElement.dataset.url}">Tutto esaurito :(</a>`;
 
 		return `<a class="event__cta" href="${actionElement.dataset.url}">
-		<span class="event__cta__book-now">Prenota il tuo posto</span>
-		<span class="event__cta__available-seats">${seatsLeft} posti disponibili</span>
+			<span class="event__cta__book-now">Prenota il tuo posto</span>
+			<span class="event__cta__available-seats">${seatsLeft} posti disponibili</span>
 		</a>`;
 	};
 
-	const addActions = (eventsDataEl) => {
-		let actionEls = eventsDataEl.querySelectorAll(".event__action");
-		actionEls.forEach(actionElement => {
-			fetch(getEventDetailUrl(eventbriteToken, actionElement.dataset.id))
-				.then(data => data.json())
-				.then(data => {
-					actionElement.innerHTML = getActionHtml(actionElement, data.attendees.length);
-				});
+	const updateCallToActionButtons = (eventsDataEl, attendeesData) => {
+		let callToActionButtons = eventsDataEl.querySelectorAll(".event__action");
+		callToActionButtons.forEach(actionElement => {
+			actionElement.innerHTML = getActionHtml(actionElement, attendeesData);
 		});
 	};
 
-	const finishLoading = function (element, html) {
-		element.classList.remove("events__data--loading");
-		element.innerHTML = html;
+	const getAttendees = (jsonFile) => {
+		fetch(jsonFile)
+			.then(data => data.json())
+			.then(attendeesData => updateCallToActionButtons(eventsInfoElement, attendeesData));
 	};
 
-	// Pre-check
-	let eventsDataElement = document.querySelector(".events__data");
-	if (!eventsDataElement) return;
+	// INIT
+	// ----
 
-	//fetch("./mocks/weshare-events.now.sh.v3.json")
-	fetch(getOwnedLiveEventsUrl(eventbriteToken))
-		.then(data => data.json())
-		.then(data => {
-			finishLoading(eventsDataElement, getEventsHtml(data.events));
-			addActions(eventsDataElement);
-			new window.LazyLoad({ elements_selector: ".event__image" });
-		})
-		.catch(() => {
-			finishLoading(eventsDataElement, `<div class="event event--loading--failed">Oops, sembra che il servizio
-				per caricare i dati degli eventi non sia disponibile. Riprova più tardi oppure
-				<a href="mailto:weshare@yoox.net">segnalacelo</a>.</div>`);
-		});
-}());
+	getEvents(eventsJsonFile);
+
+}(window.moment, window.LazyLoad));
