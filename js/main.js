@@ -1,16 +1,14 @@
-(function () {
-	const eventbriteToken = "6BGXJFRC4WZTG4KVWARZ";
-	const awsEventsFile = "https://s3.eu-central-1.amazonaws.com/weshare-events-eu-central/events.json";
-
-	const getOwnedLiveEventsUrl = () => awsEventsFile;
-	const getEventDetailUrl = (token, eventId) => `https://www.eventbriteapi.com/v3/events/${eventId}/attendees/?status=attending&token=` + token;
+(function (moment, LazyLoad) {
+	const s3Bucket = "https://s3.eu-central-1.amazonaws.com/weshare-events-eu-central/";
+	const s3EventsFile = s3Bucket + "events.json";
+	const s3AttendeesFile = s3Bucket + "attendees.json";
 
 	const timeFormat = timeString => {
 		return timeString.split(":").slice(0, 2).join(":");
 	};
 
 	const getEventsHtml = data => data.map(event => {
-		let relativeTime = window.moment(event.start.local).calendar();
+		let relativeTime = moment(event.start.local).calendar();
 		let startDateTime = event.start.local.split("T");
 		let startTime = timeFormat(startDateTime[1]);
 		let endTime = timeFormat(event.end.local.split("T")[1]);
@@ -27,28 +25,26 @@
 		</article>`;
 	}).join("");
 
-	const getActionHtml = (actionElement, attendees) => {
-		let seatsLeft = actionElement.dataset.capacity - attendees;
+	const getActionHtml = (actionElement, attendeesData) => {
+		let attendeesCount = attendeesData[actionElement.dataset.id] || 0;
+		let eventCapacity = parseInt(actionElement.dataset.capacity, 10);
+		let seatsLeft = eventCapacity - attendeesCount;
 		if (!seatsLeft) return `<a class="event__sold-out" href="${actionElement.dataset.url}">Tutto esaurito :(</a>`;
 
 		return `<a class="event__cta" href="${actionElement.dataset.url}">
-		<span class="event__cta__book-now">Prenota il tuo posto</span>
-		<span class="event__cta__available-seats">${seatsLeft} posti disponibili</span>
+			<span class="event__cta__book-now">Prenota il tuo posto</span>
+			<span class="event__cta__available-seats">${seatsLeft} posti disponibili</span>
 		</a>`;
 	};
 
-	const addActions = (eventsDataEl) => {
+	const updateCallToActionButtons = (eventsDataEl, attendeesData) => {
 		let actionEls = eventsDataEl.querySelectorAll(".event__action");
 		actionEls.forEach(actionElement => {
-			fetch(getEventDetailUrl(eventbriteToken, actionElement.dataset.id))
-				.then(data => data.json())
-				.then(data => {
-					actionElement.innerHTML = getActionHtml(actionElement, data.attendees.length);
-				});
+			actionElement.innerHTML = getActionHtml(actionElement, attendeesData);
 		});
 	};
 
-	const finishLoading = function (element, html) {
+	const eventsLoadHandler = function (element, html) {
 		element.classList.remove("events__data--loading");
 		element.innerHTML = html;
 	};
@@ -57,17 +53,22 @@
 	let eventsDataElement = document.querySelector(".events__data");
 	if (!eventsDataElement) return;
 
-	//fetch("./mocks/weshare-events.now.sh.v3.json")
-	fetch(getOwnedLiveEventsUrl())
+	const renderEventsAvailability = () => {
+		fetch(s3AttendeesFile)
+			.then(data => data.json())
+			.then(attendeesData => updateCallToActionButtons(eventsDataElement, attendeesData));
+	};
+
+	fetch(s3EventsFile)
 		.then(data => data.json())
-		.then(data => {
-			finishLoading(eventsDataElement, getEventsHtml(data));
-			addActions(eventsDataElement);
-			new window.LazyLoad({ elements_selector: ".event__image" });
+		.then(eventsData => {
+			eventsLoadHandler(eventsDataElement, getEventsHtml(eventsData));
+			new LazyLoad({ elements_selector: ".event__image" });
+			renderEventsAvailability();
 		})
 		.catch(() => {
-			finishLoading(eventsDataElement, `<div class="event event--loading--failed">Oops, sembra che il servizio
-				per caricare i dati degli eventi non sia disponibile. Riprova più tardi oppure
-				<a href="mailto:weshare@yoox.net">segnalacelo</a>.</div>`);
+			eventsLoadHandler(eventsDataElement, `<div class="event event--loading--failed">Oops, sembra che
+				il servizio per caricare i dati degli eventi non sia disponibile. Riprova più tardi,
+				oppure <a href="mailto:weshare@yoox.net">segnalacelo</a>.</div>`);
 		});
-}());
+}(window.moment, window.LazyLoad));
