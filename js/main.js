@@ -1,7 +1,11 @@
 (function (moment, LazyLoad) {
+	const eventsInfoElement = document.querySelector(".events__data");
 	const s3Bucket = "https://s3.eu-central-1.amazonaws.com/weshare-events-eu-central/";
-	const s3EventsFile = s3Bucket + "events.json";
-	const s3AttendeesFile = s3Bucket + "attendees.json";
+	const eventsJsonFile = s3Bucket + "events.json";
+	const attendeesJsonFile = s3Bucket + "attendees.json";
+
+	// EVENTS
+	// ------
 
 	const timeFormat = timeString => {
 		return timeString.split(":").slice(0, 2).join(":");
@@ -25,6 +29,33 @@
 		</article>`;
 	}).join("");
 
+	const eventsLoadHandler = function (element, html) {
+		element.classList.remove("events__data--loading");
+		element.innerHTML = html;
+	};
+
+	const renderEvents = eventsData => {
+		eventsLoadHandler(eventsInfoElement, getEventsHtml(eventsData));
+		new LazyLoad({ elements_selector: ".event__image" });
+		getAttendees(attendeesJsonFile);
+	};
+
+	const renderError = () => {
+		eventsLoadHandler(eventsInfoElement, `<div class="event event--loading--failed">Oops, sembra che
+			il servizio per caricare i dati degli eventi non sia disponibile. Riprova più tardi,
+			oppure <a href="mailto:weshare@yoox.net">segnalacelo</a>.</div>`);
+	};
+
+	const getEvents = (jsonFile) => {
+		fetch(jsonFile)
+			.then(data => data.json())
+			.then(renderEvents)
+			.catch(renderError);
+	};
+
+	// ATTENDEES
+	// ---------
+
 	const getActionHtml = (actionElement, attendeesData) => {
 		let attendeesCount = attendeesData[actionElement.dataset.id] || 0;
 		let eventCapacity = parseInt(actionElement.dataset.capacity, 10);
@@ -44,31 +75,15 @@
 		});
 	};
 
-	const eventsLoadHandler = function (element, html) {
-		element.classList.remove("events__data--loading");
-		element.innerHTML = html;
-	};
-
-	// Pre-check
-	let eventsDataElement = document.querySelector(".events__data");
-	if (!eventsDataElement) return;
-
-	const renderEventsAvailability = () => {
-		fetch(s3AttendeesFile)
+	const getAttendees = (jsonFile) => {
+		fetch(jsonFile)
 			.then(data => data.json())
-			.then(attendeesData => updateCallToActionButtons(eventsDataElement, attendeesData));
+			.then(attendeesData => updateCallToActionButtons(eventsInfoElement, attendeesData));
 	};
 
-	fetch(s3EventsFile)
-		.then(data => data.json())
-		.then(eventsData => {
-			eventsLoadHandler(eventsDataElement, getEventsHtml(eventsData));
-			new LazyLoad({ elements_selector: ".event__image" });
-			renderEventsAvailability();
-		})
-		.catch(() => {
-			eventsLoadHandler(eventsDataElement, `<div class="event event--loading--failed">Oops, sembra che
-				il servizio per caricare i dati degli eventi non sia disponibile. Riprova più tardi,
-				oppure <a href="mailto:weshare@yoox.net">segnalacelo</a>.</div>`);
-		});
+	// INIT
+	// ----
+
+	getEvents(eventsJsonFile);
+
 }(window.moment, window.LazyLoad));
