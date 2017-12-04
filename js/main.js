@@ -60,7 +60,7 @@
 		let attendeesCount = attendeesData[actionElement.dataset.id] || 0;
 		let eventCapacity = parseInt(actionElement.dataset.capacity, 10);
 		let seatsLeft = eventCapacity - attendeesCount;
-		if (!seatsLeft) return `<a class="event__sold-out" href="${actionElement.dataset.url}">Tutto esaurito :(</a>`;
+		if (seatsLeft <= 0) return `<a class="event__sold-out" href="${actionElement.dataset.url}">Tutto esaurito :(</a>`;
 
 		return `<a class="event__cta" href="${actionElement.dataset.url}">
 			<span class="event__cta__book-now">Prenota il tuo posto</span>
