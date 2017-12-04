@@ -48,7 +48,7 @@
 		});
 	};
 
-	const loadHandler = function (element, html) {
+	const finishLoading = function (element, html) {
 		element.classList.remove("events__data--loading");
 		element.innerHTML = html;
 	};
@@ -61,12 +61,12 @@
 	fetch(getOwnedLiveEventsUrl())
 		.then(data => data.json())
 		.then(data => {
-			loadHandler(eventsDataElement, getEventsHtml(data));
+			finishLoading(eventsDataElement, getEventsHtml(data));
 			addActions(eventsDataElement);
 			new window.LazyLoad({ elements_selector: ".event__image" });
 		})
 		.catch(() => {
-			loadHandler(eventsDataElement, `<div class="event event--loading--failed">Oops, sembra che il servizio
+			finishLoading(eventsDataElement, `<div class="event event--loading--failed">Oops, sembra che il servizio
 				per caricare i dati degli eventi non sia disponibile. Riprova più tardi oppure
 				<a href="mailto:weshare@yoox.net">segnalacelo</a>.</div>`);
 		});
