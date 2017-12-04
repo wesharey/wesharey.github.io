@@ -1,7 +1,8 @@
 (function () {
 	const eventbriteToken = "6BGXJFRC4WZTG4KVWARZ";
+	const awsEventsFile = "https://s3.eu-central-1.amazonaws.com/weshare-events-eu-central/events.json";
 
-	const getOwnedLiveEventsUrl = (token) => "https://www.eventbriteapi.com/v3/users/me/owned_events/?status=live&token=" + token;
+	const getOwnedLiveEventsUrl = () => awsEventsFile;
 	const getEventDetailUrl = (token, eventId) => `https://www.eventbriteapi.com/v3/events/${eventId}/attendees/?status=attending&token=` + token;
 
 	const timeFormat = timeString => {
@@ -47,7 +48,7 @@
 		});
 	};
 
-	const finishLoading = function (element, html) {
+	const loadHandler = function (element, html) {
 		element.classList.remove("events__data--loading");
 		element.innerHTML = html;
 	};
@@ -57,15 +58,15 @@
 	if (!eventsDataElement) return;
 
 	//fetch("./mocks/weshare-events.now.sh.v3.json")
-	fetch(getOwnedLiveEventsUrl(eventbriteToken))
+	fetch(getOwnedLiveEventsUrl())
 		.then(data => data.json())
 		.then(data => {
-			finishLoading(eventsDataElement, getEventsHtml(data.events));
+			loadHandler(eventsDataElement, getEventsHtml(data));
 			addActions(eventsDataElement);
 			new window.LazyLoad({ elements_selector: ".event__image" });
 		})
 		.catch(() => {
-			finishLoading(eventsDataElement, `<div class="event event--loading--failed">Oops, sembra che il servizio
+			loadHandler(eventsDataElement, `<div class="event event--loading--failed">Oops, sembra che il servizio
 				per caricare i dati degli eventi non sia disponibile. Riprova più tardi oppure
 				<a href="mailto:weshare@yoox.net">segnalacelo</a>.</div>`);
 		});
