@@ -1,6 +1,14 @@
 $base-space: 20px;
 $brightCyan: #00A8F2;
+
 $links-color: $brightCyan;
 $orange: darkorange;
-$cta-color: $brightCyan;
 $breakpoint-large: 700px;
+
+$buttons-color: $brightCyan;
+$buttons-border: darken($buttons-color, 10);
+$buttons-color-hover: $buttons-border;
+
+$buttons-soldout-color: $orange;
+$buttons-soldout-border: darken($orange, 10);
+$buttons-soldout-color-hover: $buttons-soldout-border;

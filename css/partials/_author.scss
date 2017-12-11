@@ -65,7 +65,7 @@ a {
 .events {
     &__title {
         @extend %centeredWhite;
-        padding: 0 $base-space;
+		padding: 0 $base-space;
     }
     &__data {
         display: block;
@@ -88,7 +88,7 @@ a {
     padding-top: $base-space / 2;
     padding-bottom: $base-space / 2;
     &__title {
-        margin-top: 0;
+		margin-top: $base-space * 2;
         @extend %loadingSkeleton;
     }
     &__description {
@@ -98,9 +98,9 @@ a {
             @extend %loadingSkeletonBg;
             padding: 0 6em;
         }
-    }    
+    }
     &__date {
-        @extend %loadingSkeleton;
+		@extend %loadingSkeleton;
         font-size: 1.2em;
         font-weight: bold;
         &__time {
@@ -121,22 +121,30 @@ a {
     %fakeButton {
         clear: left;
         color: white;
-        border-radius: $base-space;
+        border-radius: 5px;
         text-align: center;
         display: block;
         padding: $base-space/2;
-        margin: $base-space auto 0 auto;
+		margin: $base-space auto 0 auto;
+		&:hover {
+			text-decoration: none;
+		}
     }
     &__sold-out {
         @extend %fakeButton;
-        background-color: $orange;
+        background-color: $buttons-soldout-color;
         font-size: 20px;
-        max-width: 9em;
+		max-width: 9em;
+		border-bottom: 2px solid $buttons-soldout-border;
     }
     &__cta {
-        @extend %fakeButton;
-        background-color: $cta-color;
-        max-width: 13em;
+		@extend %fakeButton;
+		background-color: $buttons-color;
+		max-width: 13em;
+		border-bottom: 2px solid $buttons-border;
+		&:hover {
+			background-color: $buttons-color-hover;
+		}
         > span {
             display: block;
         }
@@ -166,16 +174,19 @@ blockquote {
     }
 }
 
-.site-footer {   
+.site-footer {
     font-size: 0.9rem;
     padding: $base-space;
 }
 
+
 @media (min-width: $breakpoint-large) {
-    .events__title,
+	.events__title,
+	.event__title,
+	.event__date,
     .weshare-info h1,
     .weshare-info h2,
     .site-footer {
         text-align: center;
-    }     
+    }
 }

@@ -525,7 +525,7 @@ a:hover {
 }
 
 .event__title {
-  margin-top: 0;
+  margin-top: 40px;
 }
 
 .events__data--loading .event__description p:before {
@@ -560,22 +560,32 @@ a:hover {
 .event .event__sold-out, .event .event__cta {
   clear: left;
   color: white;
-  border-radius: 20px;
+  border-radius: 5px;
   text-align: center;
   display: block;
   padding: 10px;
   margin: 20px auto 0 auto;
 }
 
+.event .event__sold-out:hover, .event .event__cta:hover {
+  text-decoration: none;
+}
+
 .event__sold-out {
   background-color: darkorange;
   font-size: 20px;
   max-width: 9em;
+  border-bottom: 2px solid #cc7000;
 }
 
 .event__cta {
   background-color: #00A8F2;
   max-width: 13em;
+  border-bottom: 2px solid #0085bf;
+}
+
+.event__cta:hover {
+  background-color: #0085bf;
 }
 
 .event__cta > span {
@@ -611,6 +621,8 @@ blockquote {
 
 @media (min-width: 700px) {
   .events__title,
+  .event__title,
+  .event__date,
   .weshare-info h1,
   .weshare-info h2,
   .site-footer {
