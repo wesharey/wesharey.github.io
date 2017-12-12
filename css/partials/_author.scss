@@ -80,7 +80,7 @@ a {
 }
 
 .event {
-    padding: $base-space;
+	padding: $base-space;
     &__title {
 		margin: 0;
         @extend %loadingSkeleton;
