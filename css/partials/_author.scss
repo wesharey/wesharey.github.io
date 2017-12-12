@@ -10,27 +10,25 @@
     padding: 0;
 }
 
-%centeredWhite {
-    background: white;
-    margin: 0 auto;
-    padding: 0 $base-space;
-}
-
 %clearfix:after {
     content: "";
     clear: both;
     display: table;
 }
 
+html {
+	background: #eee;
+}
+
 body {
     margin: 0 auto;
-    background: #eee;
-    max-width: 860px;
+    background: white;
+    max-width: 600px;
     font-size: 1rem;
 }
 
 .site-header {
-    @extend %centeredWhite;
+    padding: 0 $base-space;
     padding-top: $base-space;
     h1 {
         display: flex;
@@ -64,8 +62,7 @@ a {
 
 .events {
     &__title {
-        @extend %centeredWhite;
-		padding: 0 $base-space;
+        padding: 0 $base-space;
     }
     &__data {
         display: block;
@@ -83,16 +80,12 @@ a {
 }
 
 .event {
-    @extend %centeredWhite;
-    @extend %clearfix;
-    padding-top: $base-space / 2;
-    padding-bottom: $base-space / 2;
+    padding: $base-space;
     &__title {
-		margin-top: $base-space * 2;
+		margin: 0;
         @extend %loadingSkeleton;
     }
     &__description {
-        @extend %clearfix;
         .events__data--loading & p:before {
             content: " ";
             @extend %loadingSkeletonBg;
@@ -108,14 +101,14 @@ a {
         }
     }
     &__image {
-        margin: $base-space $base-space 5px 0;
+        margin: $base-space auto 5px auto;
         display: block;
         width: 100%;
         max-width: 400px;
         height: auto;
         @media (min-width: $breakpoint-large) {
-            float: left;
-            margin-right: $base-space;
+            //float: left;
+            //margin-right: $base-space;
         }
     }
     %fakeButton {
@@ -164,7 +157,6 @@ blockquote {
 }
 
 .weshare-info {
-    @extend %centeredWhite;
     padding: $base-space;
     &__title {
         @extend %visuallyHidden;

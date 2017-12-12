@@ -452,26 +452,19 @@ textarea {
   padding: 0;
 }
 
-.site-header, .events__title, .event, .weshare-info {
-  background: white;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.event:after, .event__description:after {
-  content: "";
-  clear: both;
-  display: table;
+html {
+  background: #eee;
 }
 
 body {
   margin: 0 auto;
-  background: #eee;
-  max-width: 860px;
+  background: white;
+  max-width: 600px;
   font-size: 1rem;
 }
 
 .site-header {
+  padding: 0 20px;
   padding-top: 20px;
 }
 
@@ -520,12 +513,11 @@ a:hover {
 }
 
 .event {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 20px;
 }
 
 .event__title {
-  margin-top: 40px;
+  margin: 0;
 }
 
 .events__data--loading .event__description p:before {
@@ -543,18 +535,11 @@ a:hover {
 }
 
 .event__image {
-  margin: 20px 20px 5px 0;
+  margin: 20px auto 5px auto;
   display: block;
   width: 100%;
   max-width: 400px;
   height: auto;
-}
-
-@media (min-width: 700px) {
-  .event__image {
-    float: left;
-    margin-right: 20px;
-  }
 }
 
 .event .event__sold-out, .event .event__cta {
