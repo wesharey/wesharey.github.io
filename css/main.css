@@ -453,19 +453,17 @@ textarea {
 }
 
 html {
-  background: #eee;
+  background: #EEE;
 }
 
 body {
   margin: 0 auto;
-  background: white;
   max-width: 600px;
   font-size: 1rem;
 }
 
 .site-header {
-  padding: 0 20px;
-  padding-top: 20px;
+  padding: 20px;
 }
 
 .site-header h1 {
@@ -513,7 +511,10 @@ a:hover {
 }
 
 .event {
+  background: white;
+  border-radius: 5px;
   padding: 20px;
+  margin: 20px 0;
 }
 
 .event__title {
@@ -592,11 +593,21 @@ blockquote {
 }
 
 .weshare-info {
+  background: white;
+  border-radius: 5px;
   padding: 20px;
 }
 
 .weshare-info h2 {
   font-size: 1.2rem;
+}
+
+.weshare-info p:first-of-type {
+  margin-top: 0;
+}
+
+.weshare-info :last-child {
+  margin-bottom: 0;
 }
 
 .site-footer {

@@ -17,19 +17,18 @@
 }
 
 html {
-	background: #eee;
+	background: $background-color;
 }
 
 body {
     margin: 0 auto;
-    background: white;
+    //background: white;
     max-width: 600px;
     font-size: 1rem;
 }
 
 .site-header {
-    padding: 0 $base-space;
-    padding-top: $base-space;
+    padding: $base-space;
     h1 {
         display: flex;
         align-items: center;
@@ -80,7 +79,10 @@ a {
 }
 
 .event {
+	background: white;
+	border-radius: 5px;
 	padding: $base-space;
+	margin: $base-space 0;
     &__title {
 		margin: 0;
         @extend %loadingSkeleton;
@@ -157,13 +159,21 @@ blockquote {
 }
 
 .weshare-info {
+	background: white;
+	border-radius: 5px;
     padding: $base-space;
     &__title {
         @extend %visuallyHidden;
     }
     h2 {
         font-size: 1.2rem;
-    }
+	}
+	p:first-of-type {
+		margin-top: 0;
+	}
+	:last-child {
+		margin-bottom: 0;
+	}
 }
 
 .site-footer {
