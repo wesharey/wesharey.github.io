@@ -82,7 +82,7 @@ a {
 	background: white;
 	border-radius: 5px;
 	padding: $base-space;
-	margin: $base-space 0;
+	margin: 3px 0;
     &__title {
 		margin: 0;
         @extend %loadingSkeleton;
