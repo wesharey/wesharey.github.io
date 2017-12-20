@@ -2,7 +2,7 @@
 	const eventsInfoElement = document.querySelector(".events__data");
 	const s3Bucket = "https://s3.eu-central-1.amazonaws.com/weshare-events-eu-central/";
 	const eventsJsonFile = s3Bucket + "events.json";
-	const attendeesJsonFile = s3Bucket + "attendees.json";
+	//const attendeesJsonFile = s3Bucket + "attendees.json";
 
 	// EVENTS
 	// ------
@@ -37,7 +37,7 @@
 	const renderEvents = eventsData => {
 		eventsLoadHandler(eventsInfoElement, getEventsHtml(eventsData));
 		new LazyLoad({ elements_selector: ".event__image" });
-		getAttendees(attendeesJsonFile);
+		//getAttendees(attendeesJsonFile);
 	};
 
 	const renderError = () => {
@@ -55,7 +55,7 @@
 
 	// ATTENDEES
 	// ---------
-
+	/*
 	const getActionHtml = (actionElement, attendeesData) => {
 		let attendeesCount = attendeesData[actionElement.dataset.id] || 0;
 		let eventCapacity = parseInt(actionElement.dataset.capacity, 10);
@@ -80,6 +80,7 @@
 			.then(data => data.json())
 			.then(attendeesData => updateCallToActionButtons(eventsInfoElement, attendeesData));
 	};
+	*/
 
 	// INIT
 	// ----
